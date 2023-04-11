@@ -9,7 +9,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://Abhi:Abhi@cluster0.cmmfi8o.mongodb.net/SPARKZDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => console.log('MongoDB connected'))
 	.catch((err) => console.log('Error connecting to MongoDB', err));
 

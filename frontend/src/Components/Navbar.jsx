@@ -21,7 +21,7 @@ const Navbar = ({ hideComponent ,user}) => {
   
     const googleAuth = (data) => {
 		window.open(
-			`${axiosInstance}auth/google/callback`,
+			`https://sparks-production-d365.up.railway.app/auth/google/callback`,
 			"_self"
 		);
 	};
