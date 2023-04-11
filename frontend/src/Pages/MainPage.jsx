@@ -23,7 +23,7 @@ import Footer from '../Components/Footer'
 
 
 
-const MainPage = ({user}) => {
+const MainPage = ({user,authWithGoogle}) => {
 
    
 
@@ -245,7 +245,8 @@ const MainPage = ({user}) => {
                                 fontWeight: '300',
                                 color: '#a3a3a0'
                             }} >
-                            Lorem ipsum dolor sit amet. Est voluptates omnis et dolor libero sed rerum omnis est ratione dolores aut culpa voluptatem in pariatur fugiat non obcaecati assumenda. At alias mollitia sit laboriosam dolore et voluptas rerum rem ipsam similique non voluptatem voluptas ut repellendus reiciendis non dolorem omnis. Ut quia quasi et soluta rerum eos voluptate pariatur non porro voluptatem id placeat sapiente sed nihil voluptas. Ab explicabo sequi in totam unde qui alias quidem?
+                           From a humble beginning four years ago, Sparkz, the annual national-level technical festival of Carmel College of Engineering and Technology Punnapra, has grown into an event that brings out the multitudes of talents and skills hidden in students. It is an attempt to challenge new possibilities, inspire innovation and a platform to showcase and hone our technical talents and skills. 
+As part of Sparkz, several technical and non-technical events are conducted for participants over the two days. A greater focus is placed on the technical events conducted by all four branches.  This year events for the school students are also organized to support and encourage budding talents. Participants from various colleges and schools are invited to participate and win the attractive  prizes
                         </Typography>
                     </Stack>
 

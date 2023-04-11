@@ -13,7 +13,7 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import Connect from '../Components/Connect'
 
-const Register = ({user}) => {
+const Register = ({ user }) => {
     const [backgroundImage, setBackgroundImage] = useState("");
     const [hideComponent, setHideComponent] = useState(true);
     const [username, setUsername] = useState('')
@@ -55,12 +55,11 @@ const Register = ({user}) => {
     }, []);
 
     const createUser = () => {
-        axios.post(process.env.REACT_APP_API_URL + 'users/createUser', {
+        axios.post( 'http://sparks-production-d365.up.railway.app/users/createUser', {
             username, email, mobileNo, semester, branch: department, college
         }).then((res) => {
-            console.log(res.data.data._id)
-            Cookies.set('userId',res.data.data._id)
-            navigate('/')
+            Cookies.set('userId', res.data.data._id)
+            navigate('/branch')
         }).catch((err) => {
             if (err) {
                 window.location.reload()
@@ -72,14 +71,37 @@ const Register = ({user}) => {
 
     const navigate = useNavigate()
 
- useEffect(() => {
-   if(user){
-    navigate('/')
-   }
- }, [])
+    useEffect(() => {
+        if (user && user) {
+            navigate('/')
+        }
+    }, [])
 
- 
- 
+
+    const handleInput = (event) => {
+        const inputValue = event.target.value;
+        const maxLength = event.target.maxLength;
+        const isValid = /^\d{0,10}$/.test(inputValue); // regular expression to match 0 to 10 digits
+
+        if (!isValid) {
+            event.preventDefault();
+        }
+    };
+
+    const isLoggedInEarly = () => {
+        axios.post('http://sparks-production-d365.up.railway.app/users/isLogged', {
+            email: user?.email
+        }).then((res) => {
+            console.log(res)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
+    useEffect(() => {
+        isLoggedInEarly()
+    }, [])
+
 
     return (
         <Stack height='100%'>
@@ -96,10 +118,10 @@ const Register = ({user}) => {
                 <Stack >
                     <Navbar hideComponent={hideComponent} user={user}/>
                 </Stack>
-                <Stack direction='column' mt={3} sx={{mt:{sm:3,xs:14}}} >
-                    <Stack sx={{p:{sm:10,xs:2}}} >
+                <Stack direction='column' mt={3} sx={{ mt: { sm: 3, xs: 14 } }} >
+                    <Stack sx={{ p: { sm: 10, xs: 2 } }} >
                         <Stack justifyContent='center' alignItems='center'>
-                            <Stack sx={{p:{sm:5,xs:1}}}>
+                            <Stack sx={{ p: { sm: 5, xs: 1 } }}>
                                 <Typography
                                     sx={{
                                         ml: '20px',
@@ -110,42 +132,51 @@ const Register = ({user}) => {
                             </Stack>
 
                         </Stack>
-                        <Stack direction='column' sx={{ padding:{sm: '0px 100px',xs: '0px 30px'} }} gap={2}>
-                            <Stack display='flex' sx={{flexDirection:{sm:'row',sm:'column'}}}  gap={2}>
-                                <Stack flex={6}>
-                                    <TextField  onChange={(e) => setUsername(e.target.value)} id="outlined-basic" label="Name" variant="outlined" />
+                        <form>
+
+
+
+                            <Stack sx={{ padding: { sm: '0px 100px', xs: '0px 30px' } }} gap={2}>
+                                <Stack display='flex' direction='row' sx={{ flexDirection: { sm: 'row', xs: 'column' } }} gap={2}>
+                                    <Stack flex={6}>
+                                        <TextField onChange={(e) => setUsername(e.target.value)} id="outlined-basic" label="Name" variant="outlined" />
+                                    </Stack>
+                                    <Stack flex={6}>
+                                        <TextField type='email' onChange={(e) => setEmail(e.target.value)} id="outlined-basic" label="Email" variant="outlined" />
+                                    </Stack>
                                 </Stack>
-                                <Stack flex={6}>
-                                    <TextField  onChange={(e) => setEmail(e.target.value)} id="outlined-basic" label="Email" variant="outlined" />
+                                <Stack display='flex' sx={{ flexDirection: { sm: 'row', xs: 'column' } }} gap={2}>
+                                    <Stack flex={6}>
+                                        <TextField type='number' inputProps={{ maxLength: 10, onInput: handleInput }} value={mobileNo} onChange={(e) => setMobileNo(e.target.value)} id="outlined-basic" label="Mobile no" variant="outlined" />
+                                    </Stack>
+                                    <Stack flex={6}>
+                                        <TextField value={semester} onChange={(e) => setSemester(e.target.value)} id="outlined-basic" label="Semester" variant="outlined" />
+                                    </Stack>
+                                </Stack>
+                                <Stack display='flex' sx={{ flexDirection: { sm: 'row', xs: 'column' } }} gap={2}>
+                                    <Stack flex={6}>
+                                        <TextField
+                                            inputProps={{
+                                                maxLength: 25,
+                                            }}
+                                            value={department} onChange={(e) => setDepartment(e.target.value)} id="outlined-basic" label="Department" variant="outlined" />
+                                    </Stack>
+                                    <Stack flex={6}>
+                                        <TextField value={college} onChange={(e) => setCollege(e.target.value)} id="outlined-basic" label="College" variant="outlined" />
+                                    </Stack>
+                                </Stack>
+                                <Stack direction='row' gap={2}>
+                                    <Stack flex={12}>
+                                        <Button variant="contained" onClick={createUser}>Register</Button>
+                                    </Stack>
                                 </Stack>
                             </Stack>
-                            <Stack display='flex' sx={{flexDirection:{sm:'row',sm:'column'}}} gap={2}>
-                                <Stack flex={6}>
-                                    <TextField type='number' value={mobileNo} onChange={(e) => setMobileNo(e.target.value)} id="outlined-basic" label="Mobile no" variant="outlined" />
-                                </Stack>
-                                <Stack flex={6}>
-                                    <TextField value={semester} onChange={(e) => setSemester(e.target.value)} id="outlined-basic" label="Semester" variant="outlined" />
-                                </Stack>
-                            </Stack>
-                            <Stack display='flex' sx={{flexDirection:{sm:'row',sm:'column'}}} gap={2}>
-                                <Stack flex={6}>
-                                    <TextField value={department} onChange={(e) => setDepartment(e.target.value)} id="outlined-basic" label="Department" variant="outlined" />
-                                </Stack>
-                                <Stack flex={6}>
-                                    <TextField value={college} onChange={(e) => setCollege(e.target.value)} id="outlined-basic" label="College" variant="outlined" />
-                                </Stack>
-                            </Stack>
-                            <Stack direction='row' gap={2}>
-                                <Stack flex={12}>
-                                    <Button variant="contained" onClick={createUser}>Register</Button>
-                                </Stack>
-                            </Stack>
-                        </Stack>
+                        </form>
                     </Stack>
                 </Stack>
 
             </Stack>
-            <Connect/>
+            <Connect />
             <Footer />
         </Stack >
     )

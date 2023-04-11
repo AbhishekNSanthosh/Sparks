@@ -9,24 +9,14 @@ import bg2 from '../Assets/backgrounds/background2.png'
 import bg3 from '../Assets/backgrounds/background3.png'
 import bg4 from '../Assets/backgrounds/background4.png'
 import bg5 from '../Assets/backgrounds/background1.svg'
-import velocity from '../Assets/velocity.png'
 import register from '../Assets/register.svg'
-import prize from '../Assets/prize.png'
-import medal1 from '../Assets/Medal1.png'
 import medalfrist from '../Assets/medalfirst.png'
 import medalsecond from '../Assets/medalsecond.png'
 import medalthird from '../Assets/medalthird.png'
-import medal2 from '../Assets/Medal2.png'
-import medal3 from '../Assets/Medal3.png'
-import online from '../Assets/online.png'
 import date from '../Assets/dateRec.png'
-import eventsbg from '../Assets/eventsDir.png'
-import eventbg from '../Assets/bg.png'
-import eventbg2 from '../Assets/eventCard.png'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Footer from '../Components/Footer'
-import events from '../Events'
 import './styles.css'
 import axios from 'axios'
 import Cookies from 'js-cookie'
@@ -93,7 +83,7 @@ const SingleEvent = ({ user }) => {
   const registeredBy = Cookies.get('userId')
 
   const eventRegister = () => {
-    axios.post(process.env.REACT_APP_API_URL + 'users/eventRegister', {
+    axios.post('http://sparks-production-d365.up.railway.app/users/eventRegister', {
       registeredBy, eventName: eventDetails.title, eventDep: params.event
     }).then((res) => {
       console.log(res)
@@ -105,7 +95,7 @@ const SingleEvent = ({ user }) => {
   }
 
   const isRegistered = () => {
-    axios.post(process.env.REACT_APP_API_URL + 'users/isRegistereEvent', {
+    axios.post('http://sparks-production-d365.up.railway.app/users/isRegistereEvent', {
       registeredBy, eventName: eventDetails?.title
     }).then((res) => {
       console.log(res.data.resCode)
@@ -406,6 +396,7 @@ const SingleEvent = ({ user }) => {
                       {eventDetails?.desc}
                     </Typography>
                   </Stack>
+                  {eventDetails?.rules && 
                   <Stack mb={1} ml={1}>
                     <Typography sx={{
                       fontFamily: 'Kelly Slab',
@@ -415,6 +406,9 @@ const SingleEvent = ({ user }) => {
                       Rules and Regulations :
                     </Typography>
                   </Stack>
+                    }
+                    {eventDetails?.rules && 
+                   
                   <Stack sx={{
                     scrollbarWidth: 'thin',
                     scrollbarColor: '#999 #fff',
@@ -438,6 +432,7 @@ const SingleEvent = ({ user }) => {
                     ))}
 
                   </Stack>
+                  }
                 </Stack>
               </Stack>
             </Stack>
@@ -479,9 +474,9 @@ const SingleEvent = ({ user }) => {
               </Stack>
             </Stack>
           </Stack>
-          <Stack flex={12} p={3} sx={{ display: { xs: 'none', sm: 'flex' } }}>
-           <Stack >
-              <Button onClick={() => navigate('/branch')} variant='contained' sx={{ height: '50px', width: '100px' }}>
+          <Stack gap={10} justifyContent='space-between' direction='row' flex={12} p={3} sx={{ display: { xs: 'none', sm: 'flex' } }}>
+          
+              <Button onClick={() => navigate('/branch')} variant='contained' sx={{ height: '50px', width: '100px' ,bgcolor:'red'}}>
                 <Typography sx={{
                   fontFamily: 'Kelly Slab',
                   fontSize: '14px',
@@ -490,9 +485,9 @@ const SingleEvent = ({ user }) => {
                   BACK
                 </Typography>
               </Button>
-            </Stack>
-            <Stack>
-              <Button onClick={() => navigate(`/branch/${params.event}`)} variant='contained' sx={{ height: '50px', width: '100px' }}>
+          
+           
+              <Button onClick={() => navigate(`/branch/${params.event}`)} variant='contained' sx={{ height: '50px', width: '100px' ,bgcolor:'red'}}>
                 <Typography sx={{
                   fontFamily: 'Kelly Slab',
                   fontSize: '14px',
@@ -501,7 +496,7 @@ const SingleEvent = ({ user }) => {
                   EVENTS
                 </Typography>
               </Button>
-            </Stack>
+            
           </Stack>
 
           {/* responsive */}

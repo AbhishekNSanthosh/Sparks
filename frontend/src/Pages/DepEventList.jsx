@@ -19,7 +19,8 @@ const DepEventList = ({ user }) => {
 
     const [hideComponent, setHideComponent] = useState(true);
     const [backgroundImage, setBackgroundImage] = useState("");
-    const [eventDatas, setEventDatas] = useState([])
+    const [eventDatas, setEventDatas] = useState([]);
+    const [eventName, setEventName] = useState('');
     const backgroundImageUrls = [
         bg,
         bg1,
@@ -67,29 +68,34 @@ const DepEventList = ({ user }) => {
     useEffect(() => {
         if (params.event === "cse") {
             setEventDatas(events.cse)
+            setEventName('COMPUTER SCIENCE ENGINEERING')
         }
     }, [])
 
     useEffect(() => {
         if (params.event === "eee") {
+            setEventName('ELECTRICAL & ELECTRONICS ENGINEERING')
             setEventDatas(events.eee)
         }
     }, [])
 
     useEffect(() => {
         if (params.event === "civil") {
+            setEventName('CIVIL ENGINEERING')
             setEventDatas(events.civil)
         }
     }, [])
 
     useEffect(() => {
         if (params.event === "mech") {
+            setEventName('MECHANICAL ENGINEERING')
             setEventDatas(events.mech)
         }
     }, [])
 
     useEffect(() => {
         if (params.event === "bsc") {
+            setEventName('BASICS SCIENCE & HUMANITIES')
             setEventDatas(events.bsc)
         }
     }, [])
@@ -120,11 +126,11 @@ const DepEventList = ({ user }) => {
                         <Stack>
                             <Typography
                                 sx={{
-                                    ml: '20px',
+                                    ml: '23px',
                                     fontFamily: 'Kelly Slab',
                                     fontSize: { sm: '30px', xs: '17px' },
                                     fontWeight: '700'
-                                }}>COMPUTER SCIENCE AND ENGINEERING</Typography>
+                                }}>{eventName}</Typography>
                         </Stack>
                         <Stack p={3}>
                             <Stack >

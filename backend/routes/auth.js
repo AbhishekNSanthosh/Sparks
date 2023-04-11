@@ -3,9 +3,10 @@ const passport = require("passport");
 
 router.get("/login/success", (req, res) => {
 	if (req.user) {
+		console.log("requested user :",req.user._json.email)
 		return res.status(200).json({
 			error: false,
-			message: "Successfully Loged In",
+			message: "Successfully Logged In",
 			user: req.user,
 		});
 	} else {

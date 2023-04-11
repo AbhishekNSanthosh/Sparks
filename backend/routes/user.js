@@ -22,13 +22,23 @@ router.post('/createUser', async (req, res) => {
     let { username, email, mobileNo, gpayNo, college, collegeAddress, branch, semester } = req.body
 
     try {
-        const user = new User({ email, username, mobileNo, college, branch, semester });
-        await user.save();
-        res.status(201).json({
-            status: 'success',
-            error: false,
-            data: user
-        });
+        const userExist = await User.findOne({ email })
+        if (!userExist) {
+            const user = new User({ email, username, mobileNo, college, branch, semester });
+            await user.save();
+            return res.status(201).json({
+                status: 'success',
+                error: false,
+                data: user,
+                message:"signed in"
+            });
+        } else {
+            return res.status(201).json({
+                status: 'success',
+                error: false,
+                message:"You're already a user"
+            });
+        }
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -59,7 +69,7 @@ router.post('/eventRegister', async (req, res) => {
                 error: false,
                 message: 'Registered successfully!'
             });
-        } 
+        }
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -128,7 +138,7 @@ router.post('/isRegistereEvent', async (req, res) => {
         const isRegistered = await Event.findOne({ eventName, registeredBy })
         if (isRegistered) {
             return res.status(200).json({
-                resCode:204,
+                resCode: 204,
                 status: "success",
                 error: false,
                 message: `You've already registered for ${eventName}`
@@ -136,7 +146,7 @@ router.post('/isRegistereEvent', async (req, res) => {
 
         }
         return res.status(200).json({
-            resCode:203,
+            resCode: 203,
             status: "success",
             error: false,
             message: "Not registered yet!"
@@ -224,7 +234,30 @@ router.get('/getAdminDetails', auth.isLoggedIn, async (req, res) => {
 
     return res.status(200).json({
         status: "success",
-        data:req.admin
+        data: req.admin
     })
 })
+
+//API to check user has logged in early
+router.post('/isLogged', async (req, res) => {
+    let { email } = req.body
+    const user = await User.findOne({ email })
+    console.log(user)
+    if (!user) {
+        return res.status(500).json({
+            statusCode: 500,
+            status: "failed",
+            error: false,
+            message: "You're not registered yet"
+        })
+    }
+
+    return res.status(200).json({
+        statusCode: 200,
+        status: "success",
+        error: false,
+        message: "You're already registered user!"
+    })
+})
+
 module.exports = router; 

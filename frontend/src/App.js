@@ -15,6 +15,7 @@ import Cookies from 'js-cookie'
 
 
 
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -32,10 +33,12 @@ function App() {
     }, 3000);
   }, []);
 
+  
+
 
   const getUser = async () => {
     try {
-      const url = `${process.env.REACT_APP_API_URL}auth/login/success`;
+      const url = `http://sparks-production-d365.up.railway.app/auth/login/success`;
       const { data } = await axios.get(url, { withCredentials: true });
       setUser(data.user._json);
       console.log(data.user._json)
@@ -46,12 +49,16 @@ function App() {
 
   useEffect(() => {
     getUser();
+  }, []);
+
+  useEffect(() => {
     setTimeout(() => {
-      Cookies.remove('auth_token');
+      Cookies.remove('userId');
       setUser(null)
       window.location.reload()
     }, 3600000);
-  }, []);
+  }, [])
+  
 
 
 

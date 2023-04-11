@@ -8,6 +8,8 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { motion } from 'framer-motion'
 
+import { auth, googleAuthProvider } from '../Firebase/Firebase'
+
 
 const Navbar = ({ hideComponent ,user}) => {
 
@@ -21,7 +23,7 @@ const Navbar = ({ hideComponent ,user}) => {
   
     const googleAuth = (data) => {
 		window.open(
-			`https://sparks-production-d365.up.railway.app/auth/google/callback`,
+			`http://sparks-production-d365.up.railway.app/auth/google/callback`,
 			"_self"
 		);
 	};
@@ -50,6 +52,16 @@ const Navbar = ({ hideComponent ,user}) => {
         console.log('res')
 		window.open(`${axiosInstance}auth/logout`, "_self");
 	};
+
+    function Login() {
+        const handleGoogleSignIn = async () => {
+          try {
+            await auth.signInWithPopup(googleAuthProvider);
+          } catch (error) {
+            console.error(error);
+          }
+        }
+    }
 
     return (
         <motion.div
@@ -123,7 +135,9 @@ const Navbar = ({ hideComponent ,user}) => {
                 { !user ? 
                 <>
                 <Stack>
-                    <Typography onClick={googleAuth} sx={{
+                    <Typography onClick={
+                        googleAuth
+                       } sx={{
                         fontFamily: 'Kelly Slab',
                         fontSize: '23px',
                         fontWeight: '600',
