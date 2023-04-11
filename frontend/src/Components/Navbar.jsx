@@ -9,15 +9,22 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { motion } from 'framer-motion'
 
 
-const Navbar = ({ hideComponent,googleAuth ,user}) => {
+const Navbar = ({ hideComponent ,user}) => {
 
     const location = useLocation();
     const [showLogo, setShowLogo] = useState(false);
     const [showEvents, setShowEvents] = useState(true)
     const [imgUrl, setImgUrl] = useState(user?.picture)
 
-  
+    const axiosInstance = 'https://sparks-production-d365.up.railway.app'
 
+  
+    const googleAuth = (data) => {
+		window.open(
+			`${axiosInstance}auth/google/callback`,
+			"_self"
+		);
+	};
 
 
     useEffect(() => {
@@ -41,7 +48,7 @@ const Navbar = ({ hideComponent,googleAuth ,user}) => {
 
     const logout = () => {
         console.log('res')
-		window.open(`${process.env.REACT_APP_API_URL}auth/logout`, "_self");
+		window.open(`${axiosInstance}auth/logout`, "_self");
 	};
 
     return (
@@ -106,7 +113,7 @@ const Navbar = ({ hideComponent,googleAuth ,user}) => {
                                     transition={{ duration: 1 }}
                                 >
                                     <Stack  mt={6}>
-                                        <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer', height: { sm: '110px', xs: '100px' }, width: { xs: '100px', sm: '110px' } }} width='150px' component='img' src={logo} />
+                                        <Box mr={2} onClick={() => navigate('/')} sx={{ cursor: 'pointer', height: { sm: '110px', xs: '100px' }, width: { xs: '100px', sm: '110px' } }} width='150px' component='img' src={logo} />
                                     </Stack>
                                 </motion.div>
                             </Stack>
@@ -142,7 +149,7 @@ const Navbar = ({ hideComponent,googleAuth ,user}) => {
                         fontWeight: '300',
                         zIndex: 1,
                         cursor: 'pointer',
-                    }}>{user?.name}</Typography>
+                    }}>{user?.name.slice(0,9)}</Typography>
                     {/* <Box sx={{height:'35px',width:'35px',borderRadius:'50%',display:{xs:'none',sm:'flex'}}} component='img' src={imgUrl}/> */}
             </Stack>
                 }

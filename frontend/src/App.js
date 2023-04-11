@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import SplashPage from "./Components/SplashPage";
 import Credits from "./Pages/Credits";
 import axios from 'axios'
+import Register from "./Pages/Register";
+import Cookies from 'js-cookie'
 
 
 
@@ -31,20 +33,27 @@ function App() {
   }, []);
 
 
-	const getUser = async () => {
-		try {
-			const url = `${process.env.REACT_APP_API_URL}auth/login/success`;
-			const { data } = await axios.get(url, { withCredentials: true });
-			setUser(data.user._json);
+  const getUser = async () => {
+    try {
+      const url = `${process.env.REACT_APP_API_URL}auth/login/success`;
+      const { data } = await axios.get(url, { withCredentials: true });
+      setUser(data.user._json);
       console.log(data.user._json)
-		} catch (err) {
-			console.log(err);
-		}
-	};
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-	useEffect(() => {
-		getUser();
-	}, []);
+  useEffect(() => {
+    getUser();
+    setTimeout(() => {
+      Cookies.remove('auth_token');
+      setUser(null)
+      window.location.reload()
+    }, 3600000);
+  }, []);
+
+
 
   return (
 
@@ -60,12 +69,12 @@ function App() {
               transition={{ duration: 1 }}
             >
               {showSplash ?
-              <Stack>
+                <Stack>
 
-                <SplashPage />
-              </Stack>
+                  <SplashPage />
+                </Stack>
                 :
-                <MainPage user={user}/>
+                <MainPage user={user} />
               }
             </motion.div>
           } />
@@ -77,7 +86,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <Department user={user}/>
+              <Department user={user} />
             </motion.div>
           } />
         </Routes>
@@ -88,7 +97,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <DepEventList user={user}/>
+              <DepEventList user={user} />
             </motion.div>
           } />
         </Routes>
@@ -99,7 +108,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <SingleEvent user={user}/>
+              <SingleEvent user={user} />
             </motion.div>
           } />
         </Routes>
@@ -110,7 +119,18 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <Credits user={user}/>
+              <Credits user={user} />
+            </motion.div>
+          } />
+        </Routes>
+        <Routes>
+          <Route path="/register" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <Register user={user} />
             </motion.div>
           } />
         </Routes>

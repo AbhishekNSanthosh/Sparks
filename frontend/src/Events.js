@@ -11,7 +11,38 @@ import Filmtivia from './Assets/Event_posters/CSE/Filmtrivia .png'
 import cyberverse from './Assets/Event_posters/CSE/cyberverse.png'
 import CodeMafia from './Assets/Event_posters/CSE/CodeMafia.png'
 
+import clashofcadd from './Assets/Event_posters/CIVIL/clashofcadd.png'
+import escaperoom from './Assets/Event_posters/CIVIL/escaperoom.png'
+import facetoface from './Assets/Event_posters/CIVIL/facetoface.png'
+import graditi from './Assets/Event_posters/CIVIL/graditi.png'
+import minutetowinit from './Assets/Event_posters/CIVIL/minutetowinit.png'
+import mixandcast from './Assets/Event_posters/CIVIL/mixandcast.png'
+import mysterio from './Assets/Event_posters/CIVIL/mysterio.png'
+import rapidwall from './Assets/Event_posters/CIVIL/rapidwall.png'
+import soapysoccer from './Assets/Event_posters/CIVIL/soapysoccer.png'
+import thebestsurveyor from './Assets/Event_posters/CIVIL/thebestsurveyor_.png'
 
+import braincycle from './Assets/Event_posters/MECH/braincycle.png'
+import cadmaster from './Assets/Event_posters/MECH/cadmaster.png'
+import cardismanting from './Assets/Event_posters/MECH/cardismantling.png'
+import contraption from './Assets/Event_posters/MECH/contraption.png'
+import engineexpo from './Assets/Event_posters/MECH/engineexpo.png'
+import gokart from './Assets/Event_posters/MECH/gokart.png'
+import itbweaponshow from './Assets/Event_posters/MECH/itbpweaponshow.png'
+import lathemaster from './Assets/Event_posters/MECH/lathemaster.png'
+import projectpresentation from './Assets/Event_posters/MECH/project presentation.png'
+
+import circuitdebugging from './Assets/Event_posters/EEE/circuitdebugging.png'
+import circuitrix from './Assets/Event_posters/EEE/circuitrix.png'
+import mobilephotography from './Assets/Event_posters/EEE/mobilephotography.png'
+import rcracing from './Assets/Event_posters/EEE/rcracing.png'
+import robotrix from './Assets/Event_posters/EEE/robotrix.png'
+import simulinkmodeling from './Assets/Event_posters/EEE/simulinkmodeling.png'
+import technicalexpo from './Assets/Event_posters/EEE/technicalexpo.png'
+
+import aglimpsetokeam from './Assets/Event_posters/BSC/aglimpsetokeam.png'
+import brainbattle from './Assets/Event_posters/BSC/brainbattle.png'
+import sciencesafari from './Assets/Event_posters/BSC/sciencesafari.png'
 
 const events = {
     cse: [
@@ -335,7 +366,7 @@ const events = {
                 "Violation of the above rules leads to disqualification of the team.",
             ],
             reg_fees: "100 Per Person",
-            posterImg: "",
+            posterImg: rapidwall,
             coordinator: ["Enosh ","Vinaya  "],
             contact_coordinator: ["7012288973","9446286673"],
             gform:"https://docs.google.com/forms/d/1n0hO5qyuRL23rj7UUsahceys6cxPn3bSNoRQfBkzzXs/edit"
@@ -362,7 +393,7 @@ const events = {
         
             ],
             reg_fees: "50 Per Person",
-            posterImg: "",
+            posterImg: thebestsurveyor,
             coordinator: ["Emmanuel Jerome ","Enosh"],
             contact_coordinator: ["8078852891","7012288973"],
             gform:"https://docs.google.com/forms/d/1yk9Bg3y3fj_0a2-hGct7L32_xBkjXtY5N5RvRgYSB1c/edit"
@@ -390,7 +421,7 @@ const events = {
                 "Timing-20%",
                 ],
             reg_fees: "100 Per Person",
-            posterImg: "",
+            posterImg: mixandcast,
             coordinator: ["Abin","Bichu"],
             contact_coordinator: ["9446387700"," 8943440168"],
             gform:"https://docs.google.com/forms/d/1MJHmqHQHgMe5yQ2EH_cmc0-EHo6BG7qFp4qY_fX3s5c/viewform?edit_requested=true"
@@ -415,7 +446,7 @@ const events = {
                 "Decision of the referee will be final.",
                 ],
             reg_fees: "100 Per Person",
-            posterImg: "",
+            posterImg: soapysoccer,
             coordinator: ["Arif","Anandhan"],
             contact_coordinator: ["7736192192"," 9746577837"],
             gform:"https://docs.google.com/forms/d/e/1FAIpQLSdUxg7B0qHEP81Aue57VO-Fwt8545IVKL6Ns1rMWsbF21MHoQ/viewform"
@@ -440,7 +471,7 @@ const events = {
                 "Participants will be judged on the basis of creativity, innovation, design and completion of the work.",
                 ],
             reg_fees: "100 Per Person",
-            posterImg: "",
+            posterImg: facetoface,
             coordinator: ["Anjali","Arya"],
             contact_coordinator: ["7902507796"," 7034814836"],
         },
@@ -468,7 +499,7 @@ const events = {
                 "The drawings should be submitted in PDF format.",
                 ],
             reg_fees: "100 Per Person",
-            posterImg: "",
+            posterImg: clashofcadd,
             coordinator: ["Nadiya","Revathy"],
             contact_coordinator: ["9446284019","7559908255"],
         },
@@ -493,7 +524,7 @@ const events = {
                 "The decision of the event organizers will be final.",
                 ],
             reg_fees: "50 Per Person",
-            posterImg: "",
+            posterImg: minutetowinit,
             coordinator: ["Amal","Goutham"],
             contact_coordinator: ["8137831701","9446683865"],
         },
@@ -518,7 +549,7 @@ const events = {
                 "If you ruin a clue, there will be no way to finish the escape",
                 ],
             reg_fees: "50 Per Person",
-            posterImg: "",
+            posterImg: escaperoom,
             coordinator: ["Victor","Dilsha"],
             contact_coordinator: ["8301838768","7306913966"],
         },
@@ -544,7 +575,7 @@ const events = {
                 "Violation of the above rules and regulations leads to the qualification of the team.",
                 ],
             reg_fees: "200",
-            posterImg: "",
+            posterImg: mysterio,
             coordinator: ["Harsha","Gayathri"],
             contact_coordinator: ["7306395212","6282534843"],
             gform:"https://docs.google.com/forms/d/e/1FAIpQLSf5rIfds540fh2kL5VNJqxfukBB63pSCkkWwFqfXOl8lcLBDg/viewform?vc=0&c=0&w=1&flr=0"
@@ -566,7 +597,7 @@ const events = {
                
                 ],
             reg_fees: "",
-            posterImg: "",
+            posterImg: graditi,
             coordinator: ["Elias Thomas Kalloor (Assistant Professor)","Jayakrishnan P.B(Assistant Professor)"],
             contact_coordinator: ["8281350803","8281230257"],
         },
@@ -592,7 +623,7 @@ const events = {
                 "",
             ],
             reg_fees: "",
-            posterImg: "",
+            posterImg:itbweaponshow,
             coordinator: ["Akshay Kumar","Ashish Kumar"],
             contact_coordinator: ["7306405353","8310485153"],
         },
@@ -618,8 +649,8 @@ const events = {
                 "They should Compulsory have apron and shoes",
                 "IF THE PARTICIPATION IS MINIMUM CASH PRICE WILL NOT BE AWARDED.",
             ],
-            reg_fees: "50",
-            posterImg: "",
+            reg_fees: "100",
+            posterImg: lathemaster,
             coordinator: ["Abdullah A M","Anjana Baby"],
             contact_coordinator: ["8281164581","9778596121"],
         },
@@ -643,7 +674,7 @@ const events = {
                 "iF THE PARTICIPATION IS MINIMUM CASH PRICE WILL NOT BE AWARDED",
             ],
             reg_fees: "50",
-            posterImg: "",
+            posterImg: cadmaster,
             coordinator: ["Adarsh R","Gourinath"],
             contact_coordinator: ["9072985323","9947084250"],
         },
@@ -665,17 +696,17 @@ const events = {
                 "IF THE PARTICIPATION IS MINIMUM CASH PRICE WILL NOT BE AWARDED.",
             ],
             reg_fees: "50",
-            posterImg: "",
+            posterImg: projectpresentation,
             coordinator: ["Yadu Anilkumar","Sruthy"],
             contact_coordinator: ["9846110932","9645964869"],
         },
         {
             id: 5,
             title: "BRAIN CYCLE",
-            first_price: "2000",
-            second_price: "1500",
-            third_price: "1000",
-            prizeCount: 3,
+            first_price: "1000",
+            second_price: "500",
+            third_price: "",
+            prizeCount: 2,
             type: "INDIVIDUAL",
             mode: "VENUE() ",
             date: "19",
@@ -687,7 +718,7 @@ const events = {
                 "iF THE PARTICIPATION IS MINIMUM CASH PRICE WILL NOT BE AWARDED.",
             ],
             reg_fees: "50",
-            posterImg: "",
+            posterImg: braincycle,
             coordinator: ["Abhijith S","Faslu"],
             contact_coordinator: ["7902260566","9633222083"],
         },
@@ -715,7 +746,7 @@ const events = {
                 "If you break the rules, there will be no refund and needs to stop driving and follow coordinators instructions.",
             ],
             reg_fees: "",
-            posterImg: "",
+            posterImg: gokart,
             coordinator: ["Athuljith","Lemin"],
             contact_coordinator: ["8138842688","6282727638"],
         },
@@ -738,7 +769,7 @@ const events = {
                 "",
             ],
             reg_fees: "",
-            posterImg: "",
+            posterImg: engineexpo,
             coordinator: ["Jackson Scaria","Darshan A Mathew", ""],
             contact_coordinator: ["8281254781","8157024882"],
         },
@@ -761,7 +792,7 @@ const events = {
                 "",
             ],
             reg_fees: "",
-            posterImg: "",
+            posterImg: cardismanting,
             coordinator: ["Asif N","Jithin John Thomas", "Ananthakrishnan C"],
             contact_coordinator: ["8547432951","9567044073","7356277608"],
         },
@@ -784,13 +815,13 @@ const events = {
                 "",
             ],
             reg_fees: "",
-            posterImg: "",
+            posterImg: contraption,
             coordinator: ["Adharsh Sebastian","Gautham U"],
             contact_coordinator: ["9567501248","7994180934"],
         },
     ],
 
-    electrical: [
+    eee: [
         {
             id: 1,
             title: "RC RACING",
@@ -813,7 +844,7 @@ const events = {
                 "Certificate issued can earn the participants KTU activity points.",
             ],
             reg_fees: "50",
-            posterImg: "",
+            posterImg: rcracing,
             coordinator: ["Akshay S","Antony Sebastian"],
             contact_coordinator: ["9633053776","9020802059"],
         },
@@ -842,7 +873,7 @@ const events = {
                 "Certificate issued can earn the participants KTU activity points.",
             ],
             reg_fees: "50",
-            posterImg: "",
+            posterImg: robotrix,
             coordinator: ["Akshay Krishnan","Varghese Mathew"],
             contact_coordinator: ["8138953027","8086118753"],
         },
@@ -871,7 +902,7 @@ const events = {
                 "Certificate issued can earn the participants KTU activity points.",
             ],
             reg_fees: "30",
-            posterImg: "",
+            posterImg: simulinkmodeling,
             coordinator: ["Neeraja Maria Noel","Aswini Amruthakumar"],
             contact_coordinator: ["9497301257"," 9497359474"],
         },
@@ -897,7 +928,7 @@ const events = {
                 "Certificate issued can earn the participants KTU activity points.",
             ],
             reg_fees: "30",
-            posterImg: "",
+            posterImg: circuitdebugging,
             coordinator: ["Abhinav Rajesh","Haripriya L"],
             contact_coordinator: ["9633513721","6282046416"],
         },
@@ -928,7 +959,7 @@ const events = {
                 "Certificate issued can earn the participants KTU activity points.",
             ],
             reg_fees: "30",
-            posterImg: "",
+            posterImg: circuitrix,
             coordinator: ["Jobina Jose","Amaljith.P"],
             contact_coordinator: ["9778075439","7736180898"],
 
@@ -958,7 +989,7 @@ const events = {
                 "Images for mobile photography should be uploaded to the mail ID mentioned below: sparkz23eee@gmail.com",
             ],
             reg_fees: "30",
-            posterImg: "",
+            posterImg: mobilephotography,
             coordinator: ["Amal Shaji","Firoz Mujeeb"],
             contact_coordinator: ["8848667161","8590194316"],
         },
@@ -979,13 +1010,13 @@ const events = {
                 
                             ],
             reg_fees: "",
-            posterImg: "",
-            coordinator: [""],
-            contact_coordinator: [""],
+            posterImg: technicalexpo,
+            coordinator: ["Anandhakrishnan","Rakhimol"],
+            contact_coordinator: ["9446722578","9072246297"],
         },
     ],
 
-    basic_science: [
+    bsc: [
         {
             id: 1,
             title: "A Glimpse to KEAM- MOCK test for KEAM aspirants",
@@ -1008,8 +1039,8 @@ const events = {
                 "Calculators or any other electronic devices are not allowed in examination hall.",
                 "4 marks will be awarded for every correct answer 1 mark will be deducted for an incorrect answer",
             ],
-            reg_fees: "",
-            posterImg: "",
+            reg_fees:"",
+            posterImg: aglimpsetokeam,
             coordinator: ["ROOPAK","KARTHIKA", "MARTIN"],
             contact_coordinator: ["9562930614","9567661646","9567282100"],
         },
@@ -1035,7 +1066,7 @@ const events = {
                 "The decision of Quiz Masters shall be final and binding on the participants.",
             ],
             reg_fees: "",
-            posterImg: "",
+            posterImg: brainbattle,
             coordinator: ["ROOPAK","KARTHIKA", "MARTIN"],
             contact_coordinator: ["9562930614","9567661646","9567282100"],
         },
@@ -1059,8 +1090,8 @@ const events = {
                 "Evaluation of the working model will be based on the following. \nCreative imagination.\nScientific thought and approach.\nOriginality and innovations in the model.\nTechnical skill (Art &Craftsmanship)\nEconomic (low cost/portability/durability)\nPresentation (demonstration & explanation)",
                 "The decision of Judges shall be final and binding on the participants."
             ],
-            reg_fees: "",
-            posterImg: "",
+            reg_fees: sciencesafari,
+            posterImg: sciencesafari,
             coordinator: ["ROOPAK","KARTHIKA", "MARTIN"],
             contact_coordinator: ["9562930614","9567661646","9567282100"],
         },

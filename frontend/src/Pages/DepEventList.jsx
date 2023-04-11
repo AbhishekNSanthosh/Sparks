@@ -72,7 +72,7 @@ const DepEventList = ({ user }) => {
 
     useEffect(() => {
         if (params.event === "eee") {
-            setEventDatas(events.electrical)
+            setEventDatas(events.eee)
         }
     }, [])
 
@@ -90,7 +90,7 @@ const DepEventList = ({ user }) => {
 
     useEffect(() => {
         if (params.event === "bsc") {
-            setEventDatas(events.basic_science)
+            setEventDatas(events.bsc)
         }
     }, [])
 
@@ -108,7 +108,7 @@ const DepEventList = ({ user }) => {
 
 
             }}>
-                <Stack>
+                <Stack mb={5}>
                     <Navbar hideComponent={hideComponent} user={user} />
                 </Stack>
 

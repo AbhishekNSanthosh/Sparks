@@ -17,7 +17,7 @@ module.exports = {
                 message: "Token not found"
             })
         }
-        jwt.verify(token, process.env.Auth_Sec, async (err, decoded) => {
+        jwt.verify(token, 'sparkz', async (err, decoded) => {
             if (decoded) {
                 const adminData = await Admin.findById(decoded.userId)
                 console.log(adminData)

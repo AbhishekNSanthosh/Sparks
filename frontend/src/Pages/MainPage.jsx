@@ -25,12 +25,7 @@ import Footer from '../Components/Footer'
 
 const MainPage = ({user}) => {
 
-    const googleAuth = (data) => {
-		window.open(
-			`${process.env.REACT_APP_API_URL}auth/google/callback`,
-			"_self"
-		);
-	};
+   
 
 
     const targetDate = new Date("April 19, 2023").getTime();
@@ -114,7 +109,7 @@ const MainPage = ({user}) => {
                 {/* navbar stack */}
 
 
-                <Navbar googleAuth={googleAuth} user={user} />
+                <Navbar user={user} />
 
                 {/* logo stack */}
                 <Stack ml={5} mt={3} justifyContent='center' alignItems='center'>

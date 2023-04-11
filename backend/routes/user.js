@@ -22,7 +22,7 @@ router.post('/createUser', async (req, res) => {
     let { username, email, mobileNo, gpayNo, college, collegeAddress, branch, semester } = req.body
 
     try {
-        const user = new User({ email, username, mobileNo, gpayNo, college, collegeAddress, branch, semester });
+        const user = new User({ email, username, mobileNo, college, branch, semester });
         await user.save();
         res.status(201).json({
             status: 'success',
@@ -59,7 +59,7 @@ router.post('/eventRegister', async (req, res) => {
                 error: false,
                 message: 'Registered successfully!'
             });
-        } eventregistrations
+        } 
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -127,7 +127,8 @@ router.post('/isRegistereEvent', async (req, res) => {
     try {
         const isRegistered = await Event.findOne({ eventName, registeredBy })
         if (isRegistered) {
-            return res.status(300).json({
+            return res.status(200).json({
+                resCode:204,
                 status: "success",
                 error: false,
                 message: `You've already registered for ${eventName}`
@@ -135,6 +136,7 @@ router.post('/isRegistereEvent', async (req, res) => {
 
         }
         return res.status(200).json({
+            resCode:203,
             status: "success",
             error: false,
             message: "Not registered yet!"
@@ -191,7 +193,7 @@ router.post('/login', async (req, res) => {
         bcrypt.compare(password, admin.password, function (err, result) {
             if (result) {
                 console.log(result)
-                var access_token = jwt.sign({ userId: admin._id, username: username }, process.env.Auth_Sec, { expiresIn: "1h" });
+                var access_token = jwt.sign({ userId: admin._id, username: username }, 'sparkz', { expiresIn: "1h" });
                 res.cookie('access_Token', access_token, {
                     httpOnly: true
                 }); username
