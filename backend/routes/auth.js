@@ -26,7 +26,7 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect:'http://sparkzccet.tech/register',
+		successRedirect:'https://sparkzccet.tech/',
 		failureRedirect: "/login/failed",
 	})
 );
