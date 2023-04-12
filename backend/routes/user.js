@@ -20,7 +20,7 @@ router.get('/get', (req, res) => {
 
 router.post('/createUser', async (req, res) => {
     let { username, email, password, mobileNo, college, branch, semester } = req.body
-
+console.log(email,password)
 
     let user = await User.findOne({ email })
     if (user) {
@@ -270,7 +270,7 @@ router.post('/isLogged', async (req, res) => {
 router.post('/userLogin', async (req, res) => {
     let { email, password } = req.body;
     console.log(req.body)
-    let user = await User.findOne({ email: email })
+    let user = await User.find({ email: email })
     console.log('hi', user)
     if (user) {
         bcrypt.compare(password, user.password, function (err, result) {
