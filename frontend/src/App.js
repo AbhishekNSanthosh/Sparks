@@ -56,6 +56,8 @@ const getUserDetails = () => {
     userId
   }).then((res)=>{
     setUser(res.data.data)
+    console.log(res.data)
+    Cookies.set('userId',res.data._id)   
   }).catch((err)=>{
     console.log(err)
   })
