@@ -281,6 +281,7 @@ router.post('/userLogin', async (req, res) => {
                     httpOnly: true
                 });
                 const { password, ...userInfo } = user._doc
+                console.log(userInfo,access_token)
                return res.status(200).json({
                     statusCode: 200,
                     status: "success",
