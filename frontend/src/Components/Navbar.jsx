@@ -23,7 +23,7 @@ const Navbar = ({ hideComponent ,user}) => {
   
     const googleAuth = (data) => {
 		window.open(
-			`https://sparks-production-d365.up.railway.app/auth/google/callback`,
+			`http://sparks-production-d365.up.railway.app/auth/google/callback`,
 			"_self"
 		);
 	};
