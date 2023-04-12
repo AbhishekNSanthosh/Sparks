@@ -79,20 +79,20 @@ function App() {
         <Routes>
           <Route path="/" element={
 
-            // <motion.div
-            //   initial={{ opacity: 0 }}
-            //   animate={{ opacity: 1 }}
-            //   transition={{ duration: 1 }}
-            // >
-            //   {showSplash ?
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              {showSplash ?
            
 
               <SplashScreenPage />
 
-            //       :
-            //       <MainPage user={user} />
-            //     }
-            //   </motion.div>
+                  :
+                  <MainPage user={user} />
+                }
+              </motion.div>
           } />
         </Routes>
         <Routes>
