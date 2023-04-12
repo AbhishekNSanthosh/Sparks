@@ -9,6 +9,8 @@ import bg2 from '../Assets/backgrounds/background2.png'
 import bg3 from '../Assets/backgrounds/background3.png'
 import bg4 from '../Assets/backgrounds/background4.png'
 import bg5 from '../Assets/backgrounds/background1.svg'
+import bg6 from '../Assets/backgrounds/bg6.png'
+import bg7 from '../Assets/backgrounds/bg8.png'
 import register from '../Assets/register.svg'
 import medalfrist from '../Assets/medalfirst.png'
 import medalsecond from '../Assets/medalsecond.png'
@@ -41,6 +43,8 @@ const SingleEvent = ({ user }) => {
     bg3,
     bg4,
     bg5,
+    bg6,
+    bg7
   ];
 
 
@@ -111,7 +115,6 @@ const SingleEvent = ({ user }) => {
   }
 
   const handleButtonClick = () => {
-    window.location.href = eventDetails?.gform
     window.open(eventDetails?.gform, "_blank");
   };
 

@@ -5,6 +5,8 @@ import bg1 from '../Assets/backgrounds/background1.png'
 import bg2 from '../Assets/backgrounds/background2.png'
 import bg3 from '../Assets/backgrounds/background3.png'
 import bg4 from '../Assets/backgrounds/background4.png'
+import bg5 from '../Assets/backgrounds/bg6.png'
+import bg6 from '../Assets/backgrounds/bg8.png'
 import Navbar from '../Components/Navbar'
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
@@ -18,6 +20,8 @@ const Credits = () => {
         bg2,
         bg3,
         bg4,
+        bg5,
+        bg6
     ];
 
 

@@ -44,9 +44,9 @@ const Navbar = ({ hideComponent }) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
         >
-            <Stack alignItems='center' zIndex='9999' width='100%' sx={{
+            <Stack alignItems='center' zIndex='10' width='100%' sx={{
                 padding: { sm: 4, xs: 3 },
-                backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 10), rgba(0, 0, 0, 0.05))'
+                backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0,2.1), rgba(0, 0, 0,0.1))'
             }} p={4} height='80px' position='fixed' display='flex' flexDirection='row' justifyContent='space-between'>
 
                 <Stack sx={{ display: { sm: 'none', xs: 'flex' } }}>

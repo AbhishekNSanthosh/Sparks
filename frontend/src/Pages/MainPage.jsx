@@ -5,6 +5,8 @@ import bgImg2 from '../Assets/backgrounds/background1.png'
 import bgImg3 from '../Assets/backgrounds/background2.png'
 import bgImg4 from '../Assets/backgrounds/background3.png'
 import bgImg5 from '../Assets/backgrounds/background4.png'
+import bgImg6 from '../Assets/backgrounds/bg6.png'
+import bgImg7 from '../Assets/backgrounds/bg8.png'
 import mobileBg from '../Assets/bgMobile.png'
 // import bgImg2 from '../Assets/bgImg.svg'
 import logo from '../Assets/sparkzLogo.svg'
@@ -41,6 +43,8 @@ const MainPage = ({user,authWithGoogle}) => {
         bgImg3,
         bgImg4,
         bgImg5,
+        bgImg6,
+        bgImg7
     ];
 
 
