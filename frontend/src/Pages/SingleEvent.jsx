@@ -112,6 +112,7 @@ const SingleEvent = ({ user }) => {
 
   const handleButtonClick = () => {
     window.location.href = eventDetails?.gform
+    window.open(eventDetails?.gform, "_blank");
   };
 
   return (
