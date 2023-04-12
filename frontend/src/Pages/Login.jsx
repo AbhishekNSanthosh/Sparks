@@ -28,7 +28,6 @@ const Login = ({ user ,getReload}) => {
             console.log('first', res.data.data)
             if(res.data.statusCode === 200){
                 navigate('/branch')
-            Cookies.set('auth_token', res.data.accessToken)
             Cookies.set('userId', res.data.data._id)
             getReload(true)
             }
@@ -37,7 +36,7 @@ const Login = ({ user ,getReload}) => {
         })
     }
 
-    const Token = Cookies.get('auth_token')
+    const Token = Cookies.get('userId')
 
     useEffect(() => {
         if (Token) {
