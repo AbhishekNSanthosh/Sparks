@@ -26,11 +26,11 @@ const Login = ({ user ,getReload}) => {
             email, password
         }).then((res) => {
             console.log('first', res.data.data)
-            if(res.data.statusCode === 200){
-                navigate('/branch')
-            Cookies.set('userId', res.data.data._id)
+        
+            // Cookies.set('userId', res.data.data._id)
+            navigate('/branch')
             getReload(true)
-            }
+
         }).catch((err) => {
             console.log(err)
         })
