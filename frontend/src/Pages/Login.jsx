@@ -124,7 +124,7 @@ const Login = ({ user ,getReload}) => {
                                 </Stack>
                                 <Stack direction='row' >
                                     <Stack flex={12}>
-                                        <Button variant="contained" onClick={createUser}>Register</Button>
+                                        <Button variant="contained" onClick={createUser}>Login</Button>
                                     </Stack>
                                 </Stack>
                                 <Stack justifyContent='center' alignItems='center'>

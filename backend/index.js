@@ -26,13 +26,11 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(
-	cors({
-		origin: "http://localhost:3000",
-		methods: "GET,POST,PUT,DELETE",
-		credentials: true,
-	})
-);
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://sparkzccet.tech");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 app.use(bodyParser.json())
 app.use('/public',express.static('public'))
 app.all('*', function(req, res, next) {
