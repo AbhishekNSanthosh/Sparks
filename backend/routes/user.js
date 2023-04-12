@@ -19,34 +19,40 @@ router.get('/get', (req, res) => {
 //API to create user with all details
 
 router.post('/createUser', async (req, res) => {
-    let { username, email, mobileNo, gpayNo, college, collegeAddress, branch, semester } = req.body
+    let { username, email, password, mobileNo, college, branch, semester } = req.body
 
-    try {
-        const userExist = await User.findOne({ email })
-        if (!userExist) {
-            const user = new User({ email, username, mobileNo, college, branch, semester });
-            await user.save();
-            return res.status(201).json({
-                status: 'success',
-                error: false,
-                data: user,
-                message:"signed in"
-            });
-        } else {
-            return res.status(201).json({
-                status: 'success',
-                error: false,
-                message:"You're already a user"
-            });
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({
-            status: 'failed',
-            error: true,
-            error: 'Error creating user'
+
+    let user = await User.findOne({ email })
+    if (user) {
+        return res.status(400).json({
+            status: 'false',
+            error: 'User already exists',
         });
     }
+
+    bcrypt.hash(password, saltRounds, function (err, hash) {
+        User.create({
+            username,
+            email,
+            password: hash,
+            mobileNo,
+            college,
+            branch,
+            semester
+
+        }).then(() => {
+            res.status(200).json({
+                status: 'success',
+                message: "successfull",
+            })
+            console.log("Registered successfully");
+        }).catch((err) => {
+            return res.status(400).json({
+                status: 'error',
+                error: err,
+            });
+        })
+    });
 })
 
 //API to register a Event;
@@ -258,6 +264,61 @@ router.post('/isLogged', async (req, res) => {
         error: false,
         message: "You're already registered user!"
     })
+})
+
+//API to login a user with email and password
+router.post('/userLogin', async (req, res) => {
+    let { email, password } = req.body;
+    console.log(req.body)
+    let user = await User.findOne({ email: email })
+    console.log('hi', user)
+    if (user) {
+        bcrypt.compare(password, user.password, function (err, result) {
+            if (result) {
+                console.log(result)
+                var access_token = jwt.sign({ userId: user._id, email: email }, 'sparkz', { expiresIn: "1h" });
+                res.cookie('access_Token', access_token, {
+                    httpOnly: true
+                });
+                const { password, ...userInfo } = user._doc
+                res.status(200).json({
+                    statusCode: 200,
+                    status: "success",
+                    message: "Logged in successfully!",
+                    data: userInfo,
+                    accessToken: access_token,
+                })
+                if (err) {
+                    return res.status(500).json({
+                        statusCode: 500,
+                        status: 'failed',
+                        error: true
+                    })
+                }
+            }
+        })
+    }
+});
+
+//API to get user details
+router.post('/getUser', async (req, res) => {
+    const { userId } = req.body;
+const user = await User.findOne({_id:userId});
+console.log(user)
+
+if(!user){
+    return res.status(403).json({
+        status:"false",
+        error:'user not found'
+    })
+}
+
+const {password,...userInfo} = user._doc
+return res.status(200).json({
+    status:"success",
+    data:userInfo
+})
+
 })
 
 module.exports = router; 

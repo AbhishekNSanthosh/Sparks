@@ -22,6 +22,43 @@ const Register = ({ user }) => {
     const [semester, setSemester] = useState('')
     const [department, setDepartment] = useState('')
     const [college, setCollege] = useState('')
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState(false);
+    const [actualPassword, setActualPassword] = useState('');
+
+    function handlePasswordChange(event) {
+        setPassword(event.target.value);
+    }
+
+    function handleConfirmPasswordChange(event) {
+        setConfirmPassword(event.target.value);
+    }
+
+    const createUser = async () => {
+        console.log('etuser')
+         axios.post('https://sparks-production-d365.up.railway.app/users/createUser', {
+            username, email, mobileNo, semester, branch: department, college, password:actualPassword
+        }).then((res) => {
+            navigate('/login')
+        }).catch((err) => {
+            console.log(err)
+        })
+}
+
+    function handleSubmit() {
+        if (password === confirmPassword) {
+            console.log(password,confirmPassword)
+            setError(false)
+            setActualPassword(confirmPassword)
+            createUser()
+        } else {
+            setError(true);
+        }
+
+        // submit form if passwords match
+        // ...
+    }
 
 
 
@@ -54,28 +91,19 @@ const Register = ({ user }) => {
         };
     }, []);
 
-    const createUser = () => {
-        axios.post( 'http://sparks-production-d365.up.railway.app/users/createUser', {
-            username, email, mobileNo, semester, branch: department, college
-        }).then((res) => {
-            Cookies.set('userId', res.data.data._id)
-            navigate('/branch')
-        }).catch((err) => {
-            if (err) {
-                window.location.reload()
-            }
-        })
-    }
+   
 
     const params = useParams()
 
     const navigate = useNavigate()
 
+    const Token = Cookies.get('auth_token')
+
     useEffect(() => {
-        if (user && user) {
-            navigate('/')
+        if (Token) {
+            navigate('/branch')
         }
-    }, [])
+    }, [])  
 
 
     const handleInput = (event) => {
@@ -87,20 +115,6 @@ const Register = ({ user }) => {
             event.preventDefault();
         }
     };
-
-    const isLoggedInEarly = () => {
-        axios.post('http://sparks-production-d365.up.railway.app/users/isLogged', {
-            email: user?.email
-        }).then((res) => {
-            console.log(res)
-        }).catch((err) => {
-            console.log(err)
-        })
-    }
-
-    useEffect(() => {
-        isLoggedInEarly()
-    }, [])
 
 
     return (
@@ -116,9 +130,9 @@ const Register = ({ user }) => {
             }}>
 
                 <Stack >
-                    <Navbar hideComponent={hideComponent} user={user}/>
+                    <Navbar hideComponent={hideComponent} user={user} />
                 </Stack>
-                <Stack direction='column' mt={3} sx={{ mt: { sm: 3, xs: 14 } }} >
+                <Stack direction='column' mt={3} sx={{ mt: { sm: 3, xs: 14 },mb:{xs:7,sm:2} }} >
                     <Stack sx={{ p: { sm: 10, xs: 2 } }} >
                         <Stack justifyContent='center' alignItems='center'>
                             <Stack sx={{ p: { sm: 5, xs: 1 } }}>
@@ -145,6 +159,19 @@ const Register = ({ user }) => {
                                         <TextField type='email' onChange={(e) => setEmail(e.target.value)} id="outlined-basic" label="Email" variant="outlined" />
                                     </Stack>
                                 </Stack>
+                                <Stack display='flex' direction='row' sx={{ flexDirection: { sm: 'row', xs: 'column' } }} gap={2}>
+                                    <Stack flex={6}>
+                                        <TextField onChange={handlePasswordChange} id="outlined-basic" label="Password" variant="outlined" type='password' />
+                                    </Stack>
+                                    <Stack flex={6}>
+                                        <TextField onChange={handleConfirmPasswordChange} id="outlined-basic" label="Comfirm password" type='password' variant="outlined" />
+                                    </Stack>
+                                </Stack>
+                                {error &&
+                                    <Stack>
+                                        <Typography>Password do not match!</Typography>
+                                    </Stack>
+                                }
                                 <Stack display='flex' sx={{ flexDirection: { sm: 'row', xs: 'column' } }} gap={2}>
                                     <Stack flex={6}>
                                         <TextField type='number' inputProps={{ maxLength: 10, onInput: handleInput }} value={mobileNo} onChange={(e) => setMobileNo(e.target.value)} id="outlined-basic" label="Mobile no" variant="outlined" />
@@ -165,15 +192,26 @@ const Register = ({ user }) => {
                                         <TextField value={college} onChange={(e) => setCollege(e.target.value)} id="outlined-basic" label="College" variant="outlined" />
                                     </Stack>
                                 </Stack>
-                                <Stack direction='row' gap={2}>
+                                <Stack direction='column' gap={2}>
                                     <Stack flex={12}>
-                                        <Button variant="contained" onClick={createUser}>Register</Button>
+                                        <Button variant="contained" onClick={handleSubmit}>Register</Button>
                                     </Stack>
+                                    <Stack >
+                                <Typography onClick={()=>navigate('/login')}
+                                    sx={{
+                                        fontFamily: 'Kelly Slab',
+                                        fontSize: { sm: '14px', xs: '11px' },
+                                        fontWeight: '400',
+                                        cursor:'pointer'
+                                    }}>Already have an account ? Login</Typography>
                                 </Stack>
+                                </Stack>
+                               
                             </Stack>
                         </form>
-                    </Stack>
+                  
                 </Stack>
+                    </Stack>
 
             </Stack>
             <Connect />

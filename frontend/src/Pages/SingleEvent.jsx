@@ -83,7 +83,7 @@ const SingleEvent = ({ user }) => {
   const registeredBy = Cookies.get('userId')
 
   const eventRegister = () => {
-    axios.post('http://sparks-production-d365.up.railway.app/users/eventRegister', {
+    axios.post('http://localhost:5000/users/eventRegister', {
       registeredBy, eventName: eventDetails.title, eventDep: params.event
     }).then((res) => {
       console.log(res)
@@ -95,7 +95,7 @@ const SingleEvent = ({ user }) => {
   }
 
   const isRegistered = () => {
-    axios.post('http://sparks-production-d365.up.railway.app/users/isRegistereEvent', {
+    axios.post('https://sparks-production-d365.up.railway.app/users/isRegistereEvent', {
       registeredBy, eventName: eventDetails?.title
     }).then((res) => {
       console.log(res.data.resCode)

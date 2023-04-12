@@ -12,6 +12,7 @@ import Credits from "./Pages/Credits";
 import axios from 'axios'
 import Register from "./Pages/Register";
 import Cookies from 'js-cookie'
+import Login from "./Pages/Login";
 
 
 
@@ -25,6 +26,7 @@ const darkTheme = createTheme({
 function App() {
   const [user, setUser] = useState(null);
   const [showSplash, setShowSplash] = useState(true)
+  const [reload,setReload] = useState(false)
 
   useEffect(() => {
     // simulate a delay in loading
@@ -33,36 +35,43 @@ function App() {
     }, 3000);
   }, []);
 
+
   
-
-
-  const getUser = async () => {
-    try {
-      const url = `https://sparks-production-d365.up.railway.app/auth/login/success`;
-      const { data } = await axios.get(url, { withCredentials: true });
-      setUser(data.user._json);
-      console.log(data.user._json)
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getUser();
-  }, []);
-
+  
   useEffect(() => {
     setTimeout(() => {
       Cookies.remove('userId');
+      Cookies.remove('auth_token');
       setUser(null)
       window.location.reload()
     }, 3600000);
   }, [])
   
 
+  const userId  = Cookies.get('userId')
 
 
-  return (
+const getUserDetails = () => {
+  axios.post('https://sparks-production-d365.up.railway.app/users/getUser',{
+    userId
+  }).then((res)=>{
+    setUser(res.data.data)
+  }).catch((err)=>{
+    console.log(err)
+  })
+}
+console.log(user)
+
+useEffect(() => {
+  getUserDetails()
+}, [reload]);
+
+
+const getReload = (data) =>{
+  setReload(data)
+}
+
+return (
 
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -138,6 +147,17 @@ function App() {
               transition={{ duration: 1 }}
             >
               <Register user={user} />
+            </motion.div>
+          } />
+        </Routes>
+        <Routes>
+          <Route path="/login" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <Login user={user} getReload={getReload}/>
             </motion.div>
           } />
         </Routes>

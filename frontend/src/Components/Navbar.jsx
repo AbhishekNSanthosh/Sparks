@@ -9,24 +9,26 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { motion } from 'framer-motion'
 
 import { auth, googleAuthProvider } from '../Firebase/Firebase'
+import Cookies from 'js-cookie'
 
 
-const Navbar = ({ hideComponent ,user}) => {
+const Navbar = ({ hideComponent, user }) => {
 
     const location = useLocation();
     const [showLogo, setShowLogo] = useState(false);
     const [showEvents, setShowEvents] = useState(true)
     const [imgUrl, setImgUrl] = useState(user?.picture)
+    const [userData, setUserData] = useState(user)
 
     const axiosInstance = 'https://sparks-production-d365.up.railway.app'
 
-  
+
     const googleAuth = (data) => {
-		window.open(
-			`http://sparks-production-d365.up.railway.app/auth/google/callback`,
-			"_self"
-		);
-	};
+        window.open(
+            `http://sparks-production-d365.up.railway.app/auth/google/callback`,
+            "_self"
+        );
+    };
 
 
     useEffect(() => {
@@ -49,19 +51,10 @@ const Navbar = ({ hideComponent ,user}) => {
     };
 
     const logout = () => {
-        console.log('res')
-		window.open(`${axiosInstance}auth/logout`, "_self");
-	};
-
-    function Login() {
-        const handleGoogleSignIn = async () => {
-          try {
-            await auth.signInWithPopup(googleAuthProvider);
-          } catch (error) {
-            console.error(error);
-          }
-        }
-    }
+       user(null)
+        Cookies.remove('auth_token')
+        Cookies.remove('userId')
+    };
 
     return (
         <motion.div
@@ -124,7 +117,7 @@ const Navbar = ({ hideComponent ,user}) => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 1 }}
                                 >
-                                    <Stack  mt={6}>
+                                    <Stack mt={6}>
                                         <Box mr={2} onClick={() => navigate('/')} sx={{ cursor: 'pointer', height: { sm: '110px', xs: '100px' }, width: { xs: '100px', sm: '110px' } }} width='150px' component='img' src={logo} />
                                     </Stack>
                                 </motion.div>
@@ -132,40 +125,40 @@ const Navbar = ({ hideComponent ,user}) => {
                         }
                     </>
                 }
-                { !user ? 
-                <>
-                <Stack>
-                    <Typography onClick={
-                        googleAuth
-                       } sx={{
-                        fontFamily: 'Kelly Slab',
-                        fontSize: '23px',
-                        fontWeight: '600',
-                        cursor: 'pointer',
-                        display: { xs: 'none', sm: 'block' }
-                    }}>SIGN IN</Typography>
-                </Stack>
-                <Stack sx={{ display: { sm: 'none', xs: 'flex' } }}>
-                    <Typography onClick={googleAuth} sx={{
-                        fontFamily: 'Kelly Slab',
-                        fontSize: '13px',
-                        fontWeight: '300',
-                        zIndex: 1,
-                        cursor: 'pointer',
-                    }}>SIGNIN</Typography>
-                </Stack>
-                        </>
-                :
-                <Stack sx={{ display: { sm: 'flex', xs: 'flex' } }} direction='row' justifyContent='center' alignItems='center' gap={1}>
-                <Typography onclick={logout} sx={{
-                        fontFamily: 'Kelly Slab',
-                        fontSize:{sm: '23px',xs:'13px'},
-                        fontWeight: '300',
-                        zIndex: 1,
-                        cursor: 'pointer',
-                    }}>{user?.name.slice(0,9)}</Typography>
-                    {/* <Box sx={{height:'35px',width:'35px',borderRadius:'50%',display:{xs:'none',sm:'flex'}}} component='img' src={imgUrl}/> */}
-            </Stack>
+                {!user ?
+                    <>
+                        <Stack>
+                            <Typography onClick={
+                                () => navigate('/login')
+                            } sx={{
+                                fontFamily: 'Kelly Slab',
+                                fontSize: '23px',
+                                fontWeight: '600',
+                                cursor: 'pointer',
+                                display: { xs: 'none', sm: 'block' }
+                            }}>SIGN IN</Typography>
+                        </Stack>
+                        <Stack sx={{ display: { sm: 'none', xs: 'flex' } }}>
+                            <Typography onClick={() => navigate('/login')} sx={{
+                                fontFamily: 'Kelly Slab',
+                                fontSize: '13px',
+                                fontWeight: '300',
+                                zIndex: 1,
+                                cursor: 'pointer',
+                            }}>SIGNIN</Typography>
+                        </Stack>
+                    </>
+                    :
+                    <Stack sx={{ display: { sm: 'flex', xs: 'flex' } }} direction='row' justifyContent='center' alignItems='center' gap={1}>
+                        <Typography onclick={logout} sx={{
+                            fontFamily: 'Kelly Slab',
+                            fontSize: { sm: '23px', xs: '13px' },
+                            fontWeight: '300',
+                            zIndex: 1,
+                            cursor: 'pointer',
+                        }}>{user?.username.slice(0, 9)}</Typography>
+                        {/* <Box sx={{height:'35px',width:'35px',borderRadius:'50%',display:{xs:'none',sm:'flex'}}} component='img' src={imgUrl}/> */}
+                    </Stack>
                 }
 
             </Stack>
