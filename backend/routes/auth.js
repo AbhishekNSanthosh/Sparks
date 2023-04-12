@@ -26,14 +26,14 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect:'http://localhost:3000/register',
+		successRedirect:'https://sparkzccet.tech/register',
 		failureRedirect: "/login/failed",
 	})
 );
 
 router.get("/logout", (req, res) => {
 	req.logout();
-	res.redirect('http://localhost:3000/');
+	res.redirect('https://sparkzccet.tech/');
 });
 
 module.exports = router;
