@@ -13,6 +13,7 @@ import axios from 'axios'
 import Register from "./Pages/Register";
 import Cookies from 'js-cookie'
 import Login from "./Pages/Login";
+import SplashScreenPage from "./Pages/SplashScreenPage";
 
 
 
@@ -26,7 +27,7 @@ const darkTheme = createTheme({
 function App() {
   const [user, setUser] = useState(null);
   const [showSplash, setShowSplash] = useState(true)
-  const [reload,setReload] = useState(false)
+  const [reload, setReload] = useState(false)
 
   useEffect(() => {
     // simulate a delay in loading
@@ -36,8 +37,8 @@ function App() {
   }, []);
 
 
-  
-  
+
+
   useEffect(() => {
     setTimeout(() => {
       Cookies.remove('userId');
@@ -46,31 +47,31 @@ function App() {
       window.location.reload()
     }, 3600000);
   }, [])
-  
-
-  const userId  = Cookies.get('userId')
 
 
-// const getUserDetails = () => {
-//   axios.post('https://sparks-production-d365.up.railway.app/users/getUser',{
-//     userId
-//   }).then((res)=>{
-//     setUser(res.data.data)
-//     Cookies.set('userId',res.data._id)   
-//   }).catch((err)=>{
-//   })
-// }
-
-// useEffect(() => {
-//   getUserDetails()
-// }, [reload]);
+  const userId = Cookies.get('userId')
 
 
-const getReload = (data) =>{
-  setReload(data)
-}
+  // const getUserDetails = () => {
+  //   axios.post('https://sparks-production-d365.up.railway.app/users/getUser',{
+  //     userId
+  //   }).then((res)=>{
+  //     setUser(res.data.data)
+  //     Cookies.set('userId',res.data._id)   
+  //   }).catch((err)=>{
+  //   })
+  // }
 
-return (
+  // useEffect(() => {
+  //   getUserDetails()
+  // }, [reload]);
+
+
+  const getReload = (data) => {
+    setReload(data)
+  }
+
+  return (
 
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -78,20 +79,20 @@ return (
         <Routes>
           <Route path="/" element={
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              {showSplash ?
-                <Stack>
+            // <motion.div
+            //   initial={{ opacity: 0 }}
+            //   animate={{ opacity: 1 }}
+            //   transition={{ duration: 1 }}
+            // >
+            //   {showSplash ?
+           
 
-                  <SplashPage />
-                </Stack>
-                :
-                <MainPage user={user} />
-              }
-            </motion.div>
+              <SplashScreenPage />
+
+            //       :
+            //       <MainPage user={user} />
+            //     }
+            //   </motion.div>
           } />
         </Routes>
         <Routes>
@@ -156,7 +157,7 @@ return (
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <Login user={user} getReload={getReload}/>
+              <Login user={user} getReload={getReload} />
             </motion.div>
           } />
         </Routes>
