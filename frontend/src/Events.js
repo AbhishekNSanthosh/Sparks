@@ -199,7 +199,7 @@ const events = {
         {
             id: 7,
             title: "TECH WIZARD",
-            first_price: "3000",
+            first_price: "5000",
             second_price: "",
             third_price: "",
             prizeCount: 1,
@@ -207,6 +207,7 @@ const events = {
             mode: "Online & Offline",
             date: "20",
             time: "10:00AM Onwards",
+            gform:"https://forms.gle/vgfKfXvdr6LkRdqe8",
             desc: "All the you computer nerds out there, take note. Are you prepared to show your worth? Prepare to participate in the pinnacle of technical competitions. Avail this golden opportunity and be the TECH WIZZZAARD",
             rules: [
                 "Participation is open to all. ",
@@ -810,6 +811,7 @@ const events = {
             ],
             reg_fees: "",
             posterImg: contraption,
+            gform:"https://docs.google.com/forms/d/1wvwEjr9Xzr67S2SOu6Wd6odFQmw0WiuErnGkATOC2TY/edit",
             coordinator: ["Adharsh Sebastian","Gautham U"],
             contact_coordinator: ["9567501248","7994180934"],
         },
