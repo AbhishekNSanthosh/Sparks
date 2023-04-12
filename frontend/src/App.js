@@ -38,7 +38,7 @@ function App() {
 
   const getUser = async () => {
     try {
-      const url = `http://sparks-production-d365.up.railway.app/auth/login/success`;
+      const url = `https://sparks-production-d365.up.railway.app/auth/login/success`;
       const { data } = await axios.get(url, { withCredentials: true });
       setUser(data.user._json);
       console.log(data.user._json)
