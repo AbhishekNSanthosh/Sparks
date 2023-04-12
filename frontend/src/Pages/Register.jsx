@@ -40,7 +40,8 @@ const Register = ({ user }) => {
          axios.post('https://sparks-production-d365.up.railway.app/users/createUser', {
             username, email, mobileNo, semester, branch: department, college, password:actualPassword
         }).then((res) => {
-            navigate('/login')
+            navigate('/branch')
+             console.log(res)
         }).catch((err) => {
             console.log(err)
         })
