@@ -8,7 +8,6 @@ import bg1 from '../Assets/backgrounds/background1.png'
 import bg2 from '../Assets/backgrounds/background2.png'
 import bg3 from '../Assets/backgrounds/background3.png'
 import bg4 from '../Assets/backgrounds/background4.png'
-import bg5 from '../Assets/backgrounds/bg6.png'
 import bg6 from '../Assets/backgrounds/bg8.png'
 import card from '../Assets/velocity.png'
 import styled from 'styled-components'
@@ -29,7 +28,6 @@ const DepEventList = ({ user }) => {
         bg2,
         bg3,
         bg4,
-        bg5,
         bg6
     ];
 
@@ -156,7 +154,7 @@ const DepEventList = ({ user }) => {
                                                         cursor: 'pointer', height: { xs: '100%', sm: '85%' }, width: { xs: '310px', sm: '85%' },
                                                         transition: 'transform 0.3s ease',
                                                         '&:hover': {
-                                                            transform: 'scale(1.1)'
+                                                            transform:{xs:'none',sm: 'scale(1.1)'}
                                                         },
                                                     }}
                                                     src={eventData.posterImg} />

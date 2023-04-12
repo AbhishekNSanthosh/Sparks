@@ -46,7 +46,7 @@ const Navbar = ({ hideComponent }) => {
         >
             <Stack alignItems='center' zIndex='10' width='100%' sx={{
                 padding: { sm: 4, xs: 3 },
-                backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0,2.1), rgba(0, 0, 0,0.1))'
+                backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0,10.1), rgba(0, 0, 0,0.01))'
             }} p={4} height='80px' position='fixed' display='flex' flexDirection='row' justifyContent='space-between'>
 
                 <Stack sx={{ display: { sm: 'none', xs: 'flex' } }}>
@@ -100,7 +100,7 @@ const Navbar = ({ hideComponent }) => {
                         <Typography onClick={handleScrollToBottom} sx={{
                             fontFamily: 'Kelly Slab',
                             fontSize: '13px',
-                            fontWeight: '600',
+                            fontWeight: '300',
                             zIndex: 1,
                             cursor: 'pointer',
                             display: { xs: 'flex', sm: 'none' }

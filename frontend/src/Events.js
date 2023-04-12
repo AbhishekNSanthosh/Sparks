@@ -1046,7 +1046,7 @@ const events = {
     bsc: [
         {
             id: 1,
-            title: "A Glimpse to KEAM- MOCK test for KEAM aspirants",
+            title: "A Glimpse to KEAM - MOCK test for KEAM aspirants",
             first_price: "5000",
             second_price: "3000",
             third_price: "2000",
