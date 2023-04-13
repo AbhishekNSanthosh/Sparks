@@ -31,15 +31,15 @@ const Credits = () => {
 
 
     const designer = [
-        { img: abhiram, name: "ABHIRAM VENUGOPAL" },
-        { img: aswin, name: " ASWIN S SESHADRI" },
-        { img: aravind, name: "ARAVIND KRISHNAN K" }
+        { img: abhiram, name: "ABHIRAM VENUGOPAL" ,sem:'S6 CSE'},
+        { img: aswin, name: " ASWIN S SESHADRI",sem:'S6 CSE' },
+        { img: aravind, name: "ARAVIND KRISHNAN K",sem:'S6 CSE' }
     ]
 
     const developers = [
-        { img: abhishek, name: "ABHISHEK S" },
-        { img: arnold, name: "ARNOLD DENZIL" },
-        { img: hari, name: "HARIKRISHNAN E V" }
+        { img: abhishek, name: "ABHISHEK S" ,sem:'S2 CSE'},
+        { img: arnold, name: "ARNOLD DENZIL" ,sem:'S8 CSE'},
+        { img: hari, name: "HARIKRISHNAN E V" ,sem:'S8 CSE'}
     ]
 
     useEffect(() => {
@@ -108,7 +108,7 @@ const Credits = () => {
                                     <Stack alignItems='center' justifyContent='center' sx={{ height: { sm: '250px', xs: '220px' }, width: { sm: '250px', xs: '250px' }, border: '1px solid red', borderRadius: '5px', backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05))' }}>
                                         <Box sx={{ height: { sm: '250px', xs: '250px' }, width: { sm: '250px', xs: '250px' } }} component='img' src={design?.img} />
                                     </Stack>
-                                    <Stack justifyContent='center' alignItems='center'>
+                                    <Stack gap={2} justifyContent='center' alignItems='center' direction='column'>
                                         <Typography
                                             sx={{
                                                 mt: 1,
@@ -116,6 +116,13 @@ const Credits = () => {
                                                 fontSize: { sm: '18px', xs: '15px' },
                                                 fontWeight: '700',
                                             }}>{design?.name}</Typography>
+                                             <Typography
+                                            sx={{
+                                                mt: 1,
+                                                fontFamily: 'Kelly Slab',
+                                                fontSize: { sm: '18px', xs: '15px' },
+                                                fontWeight: '700',
+                                            }}>{design?.sem}</Typography>
                                     </Stack>
                                 </Stack>
                             ))}
@@ -138,7 +145,7 @@ const Credits = () => {
                                     <Stack alignItems='center' justifyContent='center' sx={{ height: { sm: '250px', xs: '220px' }, width: { sm: '250px', xs: '250px' }, border: '1px solid red', borderRadius: '5px', backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05))' }}>
                                         <Box sx={{ height: { sm: '250px', xs: '250px' }, width: { sm: '250px', xs: '250px' } }} component='img' src={design?.img} />
                                     </Stack>
-                                    <Stack justifyContent='center' alignItems='center'>
+                                    <Stack justifyContent='center' alignItems='center' direction='column'> 
                                         <Typography
                                             sx={{
                                                 mt: 1,
@@ -146,6 +153,13 @@ const Credits = () => {
                                                 fontSize: { sm: '18px', xs: '15px' },
                                                 fontWeight: '700',
                                             }}>{design?.name}</Typography>
+                                             <Typography
+                                            sx={{
+                                                mt: 1,
+                                                fontFamily: 'Kelly Slab',
+                                                fontSize: { sm: '18px', xs: '15px' },
+                                                fontWeight: '700',
+                                            }}>{design?.sem}</Typography>
                                     </Stack>
                                 </Stack>
                             ))}

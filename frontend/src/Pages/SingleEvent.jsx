@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Link, Stack, Typography } from '@mui/material'
+import { Box, Button, Divider, IconButton, Link, Stack, Typography } from '@mui/material'
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import Connect from '../Components/Connect'
@@ -24,6 +24,7 @@ import Cookies from 'js-cookie'
 import Backdrop from '@mui/material/Backdrop';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const SingleEvent = ({ user }) => {
   const [hideComponent, setHideComponent] = useState(true);
@@ -470,13 +471,14 @@ const SingleEvent = ({ user }) => {
                     .map((contact, index) => (
 
                       <Stack key={index} flex={4} direction='column' justifyContent='center' alignItems='center'>
-                        <Stack>
+                        <Stack direction='row' gap={1}>
+                        <WhatsAppIcon sx={{fontSize:'20px',color: 'red' }}/>
                           <Typography sx={{
                             fontFamily: 'Kelly Slab',
                             fontSize: '14px',
                             fontWeight: '500',
                           }} >
-                            <Link href={`tel:+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
+                            <Link href={`https://wa.me/+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
                               {contact}
                             </Link>
                           </Typography>
@@ -791,13 +793,14 @@ const SingleEvent = ({ user }) => {
                 <Stack flex={6} direction='column' justifyContent='center' alignItems='center'>
                   {eventDetails?.contact_coordinator && eventDetails?.contact_coordinator.map((contact, index) => (
 
-                    <Stack key={index}>
+                    <Stack key={index} direction='row' gap={1}>
+                        <WhatsAppIcon sx={{fontSize:'20px'}}/>
                       <Typography sx={{
                         fontFamily: 'Kelly Slab',
                         fontSize: '14px',
                         fontWeight: '500',
                       }} >
-                        <Link href={`tel:+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
+                        <Link href={`wa.me/+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
                           {contact}
                         </Link>
                       </Typography>
