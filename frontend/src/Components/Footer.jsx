@@ -12,7 +12,7 @@ const Footer = () => {
 
                     <Typography sx={{
                         fontFamily: 'Kelly Slab',
-                        fontSize: { sm: '11px', xs: '8px' },
+                        fontSize: { sm: '14px', xs: '8px' },
                         fontWeight: '700',
                         color: '#a3a3a0'
 
@@ -39,12 +39,12 @@ const Footer = () => {
 
                     <Typography sx={{
                         fontFamily: 'Kelly Slab',
-                        fontSize: { sm: '11px', xs: '8px' },
+                        fontSize: { sm: '14px', xs: '8px' },
                         fontWeight: '700',
                         color: '#a3a3a0'
 
                     }} >
-                        ©2023 - Sparkz CCET
+                        ©2023 - @OBCYDIANSCCET
                     </Typography>
                 </Stack>
             </Stack>

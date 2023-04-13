@@ -6,7 +6,15 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 const Faqs = () => {
     const [showDrop, setShowDrop] = useState(false)
+
+    const faqs = [
+        {que:"  What are the prerequisites for Sparkz 23?",ans:"All students with a valid college ID can enter to the fest for free."},
+        {que:"Is there any chance of getting Activity point for participating in an event?",ans:"Activity Points is given according to regulations and norms under KTU, However the points varies depending upon the type of event (Technical / Non-technical )which the candidate is participating."}
+    ]
+
     return (
+        <>
+   
         <Stack direction='column' >
             <Stack width='100%' justifyContent='space-between' direction='row'>
                 <Stack mt={1}>
@@ -53,6 +61,7 @@ const Faqs = () => {
                 </motion.div>
             }
         </Stack>
+        </>
     )
 }
 

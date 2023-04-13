@@ -32,7 +32,7 @@ const Credits = () => {
 
     const designer = [
         { img: abhiram, name: "ABHIRAM VENUGOPAL" },
-        { img: aswin, name: "ASWIN SESHADRI" },
+        { img: aswin, name: " ASWIN S SESHADRI" },
         { img: aravind, name: "ARAVIND KRISHNAN K" }
     ]
 
