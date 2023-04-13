@@ -479,7 +479,7 @@ const SingleEvent = ({ user }) => {
                             fontWeight: '500',
                           }} >
                             <Link href={`https://wa.me/+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
-                              {contact}
+                              +91 {contact}
                             </Link>
                           </Typography>
                         </Stack>
@@ -801,7 +801,7 @@ const SingleEvent = ({ user }) => {
                         fontWeight: '500',
                       }} >
                         <Link href={`wa.me/+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
-                          {contact}
+                          +91 {contact}
                         </Link>
                       </Typography>
                     </Stack>

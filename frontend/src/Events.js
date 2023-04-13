@@ -374,7 +374,6 @@ const events = {
                 "No refunds.",
                 "Decisions of the judges are final.",
                 "Use the provided materials only.",
-                "The organizers are not responsible for the safety of contestants.",
                 "Violation of the above rules leads to disqualification of the team.",
             ],
             reg_fees: "100 Per Person",

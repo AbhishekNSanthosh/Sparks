@@ -21,6 +21,7 @@ import Partners from '../Components/Partners'
 import { light } from '@mui/material/styles/createPalette'
 import Faqs from '../Components/Faqs'
 import Footer from '../Components/Footer'
+import MusicConcert from '../Components/MusicConcert'
 
 
 
@@ -296,6 +297,7 @@ As part of Sparkz, several technical and non-technical events are conducted for 
                             </Stack>
                         </Stack>
                     </Stack>
+                    <MusicConcert/>
                     {/* Connect us */}
                     <Connect />
                     <Footer />
