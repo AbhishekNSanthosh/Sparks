@@ -50,12 +50,12 @@ const Faqs = () => {
                     <Stack width='100%' direction='row'>
                         <Typography sx={{
                             fontFamily: 'Kelly Slab',
-                            fontSize: { sm: '21px', xs: '15px' },
+                            fontSize: { sm: '17px', xs: '15px' },
                             fontWeight: '700',
                             color: '#a3a3a0'
 
                         }} >
-                            All students with a valid college ID can enter to the fest for free.
+                            Any college students with a valid college ID can enter to the fest for free.
                         </Typography>
                     </Stack>
                 </motion.div>

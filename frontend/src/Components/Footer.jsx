@@ -21,7 +21,16 @@ const Footer = () => {
                     </Typography>
                 </Stack>
             </Stack>
-            <Stack flex={4} alignItems='center' justifyContent='center'>
+            <Stack flex={4} alignItems='center' justifyContent='center' direction='column' gap={1}>
+            <Typography sx={{
+                        fontFamily: 'Kelly Slab',
+                        fontSize: { sm: '12px', xs: '7px' },
+                        fontWeight: '700',
+                        color: '#a3a3a0'
+
+                    }} >
+                        POWERED BY
+                    </Typography>
                 <Button onClick={()=>navigate('/dev-connect')} sx={{ p: {xs:1,sm:2} ,border:'1px solid red',borderRadius:'5px'}}>
                     <Typography sx={{
                         fontFamily: 'Kelly Slab',
