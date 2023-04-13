@@ -525,12 +525,18 @@ const events = {
             second_price: "",
             third_price: "",
             prizeCount: 0,
+            noPrice:false,
             type: "Individual",
             gform: "https://forms.gle/nja3B7UyogPSTXrr8",
             mode: "Venue(NEAR LIBRARY)",
             date: "19 April 2023",
-            time: "10:00 PM - 4:00 PM",
+            time: "10:00 AM - 4:00 PM",
             desc: "What can you do in 60 seconds?\nIf you can complete a number of tasks which require basic skillset within one minute, then you can take home some real money.\nPrize\n₹50 on successful completion of 5 rounds\n₹100 on successful completion of 10 rounds\n₹200 on successful completion of 15 rounds",
+            priceDetails:[
+                "₹50 on successful completion of 5 rounds.",
+                "₹100 on successful completion of 10 rounds.",
+                "₹200 on successful completion of 15 rounds"
+            ],
             rules: [
                 "The game will be of 3 rounds each with 5 levels.",
                 "Successful completion of each round will guarantee cash prizes.",

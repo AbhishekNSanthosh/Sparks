@@ -1,4 +1,4 @@
-import { Box, Button, Grid, ListItem, Paper, Stack, Typography } from '@mui/material'
+import { Box, Button, Grid, ListItem, Paper, Skeleton, Stack, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import Connect from '../Components/Connect'
@@ -22,6 +22,7 @@ const DepEventList = ({ user }) => {
     const [backgroundImage, setBackgroundImage] = useState("");
     const [eventDatas, setEventDatas] = useState([]);
     const [eventName, setEventName] = useState('');
+    const [showSplash, setShowSplash] = useState(true)
     const backgroundImageUrls = [
         bg,
         bg1,
@@ -100,6 +101,13 @@ const DepEventList = ({ user }) => {
         }
     }, [])
 
+    useEffect(() => {
+        // simulate a delay in loading
+        setTimeout(() => {
+            setShowSplash(false);
+        }, 3000);
+    }, []);
+
     return (
         <Stack>
             <Stack sx={{
@@ -141,24 +149,41 @@ const DepEventList = ({ user }) => {
 
                                         <Grid item xs={4} sm={4} md={4} >
 
-                                          
-                                            <motion.div  >
 
-                                                <Box
-                                                    key={index}
-                                                    onClick={() => navigate(`/branch/${params.event}/${index + 1}`, { state: eventData })}
-                                                    component='img'
-                                                    borderRadius='10px'
-                                                    // border='2px solid white'
-                                                    sx={{
-                                                        cursor: 'pointer', height: { xs: '100%', sm: '80%' }, width: { xs: '310px', sm: '80%' },
-                                                        transition: 'transform 0.3s ease',
-                                                        '&:hover': {
-                                                            transform:{xs:'none',sm: 'scale(1.05)'}
-                                                        },
-                                                    }}
-                                                    src={eventData.posterImg} />
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 1 }}
+                                            >
+                                                {showSplash ?
+                                                    <Skeleton
+                                                        sx={{
+                                                            bgcolor: 'grey.900',
+                                                            borderRadius: '10px'
+                                                            // height: { xs: '100%', sm: '80%' }, width: { xs: '310px', sm: '80%' }
+                                                        }}
+                                                        variant="rectangular"
+                                                        width={310}
+                                                        height={380}
 
+                                                    />
+                                                    :
+                                                    <Box
+                                                        key={index}
+                                                        onClick={() => navigate(`/branch/${params.event}/${index + 1}`, { state: eventData })}
+                                                        component='img'
+                                                        borderRadius='10px'
+                                                        // border='2px solid white'
+                                                        sx={{
+                                                            cursor: 'pointer', height: { xs: '100%', sm: '80%' }, width: { xs: '310px', sm: '80%' },
+                                                            transition: 'transform 0.3s ease',
+                                                            '&:hover': {
+                                                                transform: { xs: 'none', sm: 'scale(1.05)' }
+                                                            },
+                                                        }}
+                                                        src={eventData.posterImg} />
+
+                                                }
                                             </motion.div>
 
                                         </Grid>

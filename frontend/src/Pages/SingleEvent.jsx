@@ -311,16 +311,30 @@ const SingleEvent = ({ user }) => {
                       </Stack>
                     </Stack>
                   } else {
-                    return <Stack direction='row' justifyContent='center' alignItems='center'>
+                    return <Stack direction='column' justifyContent='center' alignItems='center' gap={1}>
 
-                      <Typography sx={{
-                        fontFamily: 'Kelly Slab',
-                        fontSize: '18px',
-                        fontWeight: '700',
+                      {eventDetails?.noPrice ?
+                        <Typography sx={{
+                          fontFamily: 'Kelly Slab',
+                          fontSize: '18px',
+                          fontWeight: '700',
 
-                      }} >
-                        There will be no prize!.
-                      </Typography>
+                        }} >
+                          There will be no prize!.
+                        </Typography>
+                        :
+                        <>
+                          {eventDetails?.priceDetails && eventDetails?.priceDetails.map((price, index) => (
+                            <Typography key={index} sx={{
+                              fontFamily: 'Kelly Slab',
+                              fontSize: '18px',
+                              fontWeight: '700',
+
+                            }} >
+                              {price}                            </Typography>
+                          ))}
+                        </>
+                      }
                     </Stack>
                   }
                 })()}
@@ -783,7 +797,9 @@ const SingleEvent = ({ user }) => {
                         fontSize: '14px',
                         fontWeight: '500',
                       }} >
-                        {contact}
+                        <Link href={`tel:+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
+                          {contact}
+                        </Link>
                       </Typography>
                     </Stack>
                   ))}

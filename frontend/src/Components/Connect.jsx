@@ -11,8 +11,16 @@ const Connect = () => {
     }
   
     const handleYoutubeClick = () => {
-        window.open('  https://youtube.com/@sparkzccet', "_blank")
+        window.open('https://youtube.com/@sparkzccet', "_blank")
     }
+ 
+    const handleMailClick = () => {
+        window.open('mailto:sparkzccet01@gmail.com', "_blank")
+        // const email = 'sparkzccet01@gmail.com';
+        // const mailtoLink = `mailto:${email}`;
+        // window.location.href = mailtoLink;
+    }
+
 
     return (
         <Stack sx={{ backgroundColor: 'rgba(52, 54, 52, 0.219)', p: { xs: 3, sm: 5 } }} direction='column' gap={3}  >
@@ -135,12 +143,12 @@ const Connect = () => {
                 </Stack>
                 <Stack flex={2} display='flex' sx={{ flexDirection: { xs: 'row', sm: 'column' } }} gap={3} p={3} justifyContent='center' alignItems='center'>
                     <Stack>
-                        <IconButton onClick={handleYoutubeClick}>
+                        <IconButton  onClick={handleYoutubeClick}>
                             <YouTubeIcon sx={{ fontSize: '50px' }} />
                         </IconButton>
                     </Stack>
                     <Stack>
-                        <IconButton>
+                        <IconButton href='mailto:sparkzccet01@gmail.com'>
                             <EmailIcon sx={{ fontSize: '50px' }} />
                         </IconButton>
                     </Stack>
