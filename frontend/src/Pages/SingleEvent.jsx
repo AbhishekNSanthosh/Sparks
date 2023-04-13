@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Stack, Typography } from '@mui/material'
+import { Box, Button, Divider, Link, Stack, Typography } from '@mui/material'
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import Connect from '../Components/Connect'
@@ -83,30 +83,30 @@ const SingleEvent = ({ user }) => {
 
   const registeredBy = Cookies.get('userId')
 
-  const eventRegister = () => {
-    axios.post('http://localhost:5000/users/eventRegister', {
-      registeredBy, eventName: eventDetails.title, eventDep: params.event
-    }).then((res) => {
-      setRegistered(true)
-      isRegistered()
-    }).catch((err) => {
-    })
-  }
+  // const eventRegister = () => {
+  //   axios.post('http://localhost:5000/users/eventRegister', {
+  //     registeredBy, eventName: eventDetails.title, eventDep: params.event
+  //   }).then((res) => {
+  //     setRegistered(true)
+  //     isRegistered()
+  //   }).catch((err) => {
+  //   })
+  // }
 
-  const isRegistered = () => {
-    axios.post('https://sparks-production-d365.up.railway.app/users/isRegistereEvent', {
-      registeredBy, eventName: eventDetails?.title
-    }).then((res) => {
-      if (res.data.resCode === 204) {
-        setRegistered(true)
-      }
-    }).catch((err) => {
-    })
-  }
+  // const isRegistered = () => {
+  //   axios.post('https://sparks-production-d365.up.railway.app/users/isRegistereEvent', {
+  //     registeredBy, eventName: eventDetails?.title
+  //   }).then((res) => {
+  //     if (res.data.resCode === 204) {
+  //       setRegistered(true)
+  //     }
+  //   }).catch((err) => {
+  //   })
+  // }
 
-  useEffect(() => {
-    isRegistered()
-  }, [])
+  // useEffect(() => {
+  //   isRegistered()
+  // }, [])
 
   const handleClose = () => {
     setOpen(false)
@@ -195,7 +195,7 @@ const SingleEvent = ({ user }) => {
                         fontSize: '18px',
                         fontWeight: '700',
                       }} >
-                        Register 
+                        Register
                       </Typography>
                     </Button>}
                 </Stack>
@@ -393,41 +393,41 @@ const SingleEvent = ({ user }) => {
                       {eventDetails?.desc}
                     </Typography>
                   </Stack>
-                  {eventDetails?.rules && 
-                  <Stack mb={1} ml={1}>
-                    <Typography sx={{
-                      fontFamily: 'Kelly Slab',
-                      fontSize: '16px',
-                      fontWeight: '500',
-                    }} >
-                      Rules and Regulations :
-                    </Typography>
-                  </Stack>
-                    }
-                    {eventDetails?.rules && 
-                   
-                  <Stack sx={{
-                    scrollbarWidth: 'thin',
-                    scrollbarColor: '#999 #fff',
-                  }} className='rules' p={1} direction='column' height='110px' overflow='auto'>
-                    {eventDetails?.rules && eventDetails?.rules.map((rule, index) => (
-                      <Stack key={index} direction='row' gap={1}>
-                        <Stack>
-                          *
-                        </Stack>
-                        <Stack>
-                          <Typography sx={{
-                            fontFamily: 'Kelly Slab',
-                            fontSize: '14px',
-                            fontWeight: '500',
-                          }} >
-                            {rule}
-                          </Typography>
-                        </Stack>
-                      </Stack>
-                    ))}
+                  {eventDetails?.rules &&
+                    <Stack mb={1} ml={1}>
+                      <Typography sx={{
+                        fontFamily: 'Kelly Slab',
+                        fontSize: '16px',
+                        fontWeight: '500',
+                      }} >
+                        Rules and Regulations :
+                      </Typography>
+                    </Stack>
+                  }
+                  {eventDetails?.rules &&
 
-                  </Stack>
+                    <Stack sx={{
+                      scrollbarWidth: 'thin',
+                      scrollbarColor: '#999 #fff',
+                    }} className='rules' p={1} direction='column' height='110px' overflow='auto'>
+                      {eventDetails?.rules && eventDetails?.rules.map((rule, index) => (
+                        <Stack key={index} direction='row' gap={1}>
+                          <Stack>
+                            *
+                          </Stack>
+                          <Stack>
+                            <Typography sx={{
+                              fontFamily: 'Kelly Slab',
+                              fontSize: '14px',
+                              fontWeight: '500',
+                            }} >
+                              {rule}
+                            </Typography>
+                          </Stack>
+                        </Stack>
+                      ))}
+
+                    </Stack>
                   }
                 </Stack>
               </Stack>
@@ -462,7 +462,9 @@ const SingleEvent = ({ user }) => {
                             fontSize: '14px',
                             fontWeight: '500',
                           }} >
-                            {contact}
+                            <Link href={`tel:+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
+                              {contact}
+                            </Link>
                           </Typography>
                         </Stack>
                       </Stack>
@@ -471,28 +473,28 @@ const SingleEvent = ({ user }) => {
             </Stack>
           </Stack>
           <Stack gap={10} justifyContent='space-between' direction='row' flex={12} p={3} sx={{ display: { xs: 'none', sm: 'flex' } }}>
-          
-              <Button onClick={() => navigate('/branch')} variant='contained' sx={{ height: '50px', width: '100px' ,bgcolor:'red'}}>
-                <Typography sx={{
-                  fontFamily: 'Kelly Slab',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                }} >
-                  BACK
-                </Typography>
-              </Button>
-          
-           
-              <Button onClick={() => navigate(`/branch/${params.event}`)} variant='contained' sx={{ height: '50px', width: '100px' ,bgcolor:'red'}}>
-                <Typography sx={{
-                  fontFamily: 'Kelly Slab',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                }} >
-                  EVENTS
-                </Typography>
-              </Button>
-            
+
+            <Button onClick={() => navigate(`/branch/${params?.event}`)} variant='contained' sx={{ height: '50px', width: '100px', bgcolor: 'red' }}>
+              <Typography sx={{
+                fontFamily: 'Kelly Slab',
+                fontSize: '14px',
+                fontWeight: '500',
+              }} >
+                BACK
+              </Typography>
+            </Button>
+
+
+            <Button onClick={() => navigate(`/branch`)} variant='contained' sx={{ height: '50px', width: '100px', bgcolor: 'red' }}>
+              <Typography sx={{
+                fontFamily: 'Kelly Slab',
+                fontSize: '14px',
+                fontWeight: '500',
+              }} >
+                EVENTS
+              </Typography>
+            </Button>
+
           </Stack>
 
           {/* responsive */}
@@ -567,7 +569,7 @@ const SingleEvent = ({ user }) => {
                       fontSize: '15px',
                       fontWeight: '700',
                     }} >
-                    Register
+                      Register
                     </Typography>
                   </Button>}
               </Stack>
@@ -795,7 +797,7 @@ const SingleEvent = ({ user }) => {
       </Stack>
       <Connect />
       <Footer />
-      <Modal
+      {/* <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={open}
@@ -833,7 +835,7 @@ const SingleEvent = ({ user }) => {
             </Stack>
           </Box>
         </Fade>
-      </Modal>
+      </Modal> */}
     </Stack>
   )
 }

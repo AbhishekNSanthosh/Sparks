@@ -20,7 +20,7 @@ import mixandcast from './Assets/Event_posters/CIVIL/mixandcast.png'
 import mysterio from './Assets/Event_posters/CIVIL/mysterio.png'
 import rapidwall from './Assets/Event_posters/CIVIL/rapidwall.png'
 import soapysoccer from './Assets/Event_posters/CIVIL/soapysoccer.png'
-import thebestsurveyor from './Assets/Event_posters/CIVIL/thebestsurveyor_.png'
+import thebestsurveyor from './Assets/Event_posters/CIVIL/thebestsurveyor.png'
 
 import braincycle from './Assets/Event_posters/MECH/braincycle.png'
 import cadmaster from './Assets/Event_posters/MECH/cadmaster.png'
@@ -125,7 +125,7 @@ const events = {
         {
             id: 4,
             title: "FILM TRIVIA – FILM QUIZ",
-            first_price: "1500",
+            first_price: "3000",
             second_price: "1000",
             third_price: "",
             prizeCount: 2,
@@ -278,8 +278,8 @@ const events = {
         {
             id: 10,
             title: "PATTERN PRINTING",
-            first_price: "3000",
-            second_price: "1000",
+            first_price: "1500",
+            second_price: "500",
             third_price: "",
             prizeCount: 2,
             type: "Individual",

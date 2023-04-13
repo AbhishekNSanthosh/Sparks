@@ -151,10 +151,10 @@ const DepEventList = ({ user }) => {
                                                     borderRadius='10px'
                                                     // border='2px solid white'
                                                     sx={{
-                                                        cursor: 'pointer', height: { xs: '100%', sm: '85%' }, width: { xs: '310px', sm: '85%' },
+                                                        cursor: 'pointer', height: { xs: '100%', sm: '80%' }, width: { xs: '310px', sm: '80%' },
                                                         transition: 'transform 0.3s ease',
                                                         '&:hover': {
-                                                            transform:{xs:'none',sm: 'scale(1.1)'}
+                                                            transform:{xs:'none',sm: 'scale(1.05)'}
                                                         },
                                                     }}
                                                     src={eventData.posterImg} />
