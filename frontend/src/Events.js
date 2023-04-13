@@ -100,7 +100,7 @@ const events = {
         {
             id: 3,
             title: "CYBERVERSE – VR GAMING",
-            first_price: "1500",
+            first_price: "1000",
             second_price: "",
             prizeCount: 1,
             third_price: "",
@@ -134,7 +134,7 @@ const events = {
             mode: "Offline",
             date: "19",
             time: "9:00 AM - 12:00 PM",
-            desc: "Lights, camera, laughter!\nGet ready to put your film knowledge to the test with Film Trivia, the ultimate game for movie buffs.",
+            desc: "Lights, camera, laughter! Get ready to put your film knowledge to the test with Film Trivia, the ultimate game for movie buffs.",
             rules: [
                 "Maximum of 2 participants are allowed in a team.",
                 "The team should be present at the time. Those who are late will be not allowed to play the game. ",
@@ -205,15 +205,15 @@ const events = {
         {
             id: 7,
             title: "TECH WIZARD",
-            first_price: "3000",
+            first_price: "5000",
             second_price: "",
             third_price: "",
             prizeCount: 1,
             type: "Individual",
             gform: "https://forms.gle/vgfKfXvdr6LkRdqe8",
-            mode: "Online & Offline",
+            mode: "Offline",
             date: "20",
-            time: "10:00AM Onwards",
+            time: "10:00 AM Onwards",
             desc: "All the you computer nerds out there, take note. Are you prepared to show your worth? Prepare to participate in the pinnacle of technical competitions. Avail this golden opportunity and be the TECH WIZZZAARD",
             rules: [
                 "Participation is open to all. ",
@@ -227,7 +227,7 @@ const events = {
             reg_fees: "100",
             posterImg: TechWizard,
             coordinator: ["Adithya Vijayan", "Athira Ajikumar B", "Amith Vinod", "Anandu R", "Kailas Krishna"],
-            contact_coordinator: ["7736897590", "7736897590", "6282535641", "6282535641", "8075653841"],
+            contact_coordinator: ["7736897590", "8301992079", "6282535641", "9745538571", "8075653841"],
         },
         {
             id: 8,
@@ -339,8 +339,8 @@ const events = {
             gform: "https://forms.gle/KMJjCM9JjNKxT6KM8",
             prizeCount: 0,
             mode: "",
-            date: "",
-            time: "",
+            date: "19 & 20",
+            time: "10:00 AM to 4:00 PM",
             desc: "Play For Fun, Not for Prize\nExperience the Reality in Ultimate gaming\nThe anticipation comes to an end!!!!\nAre you a hardcore gamer looking for a fun and engaging way to connect with other like-minded gamers? Look no further than our upcoming gaming room event! Join with us for non-stop gaming action, socializing, and friendly competition...10+ Games with highly modified gaming equipment's have worth up to 1 million.\nEntry fees\n20/- (for 15 minutes/per game)\n50/- (for 30 minutes/Any games)\nSo mark your calendar, invite your friends, and get ready to level up at our gaming room event.",
             rules: [
                 "Equipment care: Treat gaming equipment with care and report any malfunctions or damage to the volunteers. Do not tamper with or modify the equipment in any way, if any malfunctioning in device happens, it will result you to pay fine of the device amount!!!",

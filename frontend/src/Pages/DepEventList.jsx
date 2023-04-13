@@ -130,7 +130,7 @@ const DepEventList = ({ user }) => {
                 <Stack mt={10} >
                     {/* <Button sx={{ cursor: 'pointer' }} onClick={() => navigate(`/branch/${params.event}/2`)}>hello</Button> */}
                     <Stack mt={1} sx={{ p: { sm: 5, xs: 1 } }} direction='column'>
-                        <Stack>
+                        <Stack justifyContent='center' alignItems=''>
                             <Typography
                                 sx={{
                                     ml: '23px',
@@ -153,21 +153,9 @@ const DepEventList = ({ user }) => {
                                             <motion.div
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
-                                                transition={{ duration: 1 }}
+                                                transition={{ duration: 2 }}
                                             >
-                                                {showSplash ?
-                                                    <Skeleton
-                                                        sx={{
-                                                            bgcolor: 'grey.900',
-                                                            borderRadius: '10px'
-                                                            // height: { xs: '100%', sm: '80%' }, width: { xs: '310px', sm: '80%' }
-                                                        }}
-                                                        variant="rectangular"
-                                                        width={310}
-                                                        height={380}
-
-                                                    />
-                                                    :
+                  
                                                     <Box
                                                         key={index}
                                                         onClick={() => navigate(`/branch/${params.event}/${index + 1}`, { state: eventData })}
@@ -183,7 +171,7 @@ const DepEventList = ({ user }) => {
                                                         }}
                                                         src={eventData.posterImg} />
 
-                                                }
+    
                                             </motion.div>
 
                                         </Grid>
