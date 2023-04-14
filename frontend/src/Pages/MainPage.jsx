@@ -96,7 +96,7 @@ const MainPage = ({user,authWithGoogle}) => {
      
    
     return (
-        <Stack>
+        <Stack className='container'>
             {/* parent stack */}
             <Stack className='container' direction='column'
                 sx={{

@@ -4,6 +4,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CallIcon from '@mui/icons-material/Call';
+import LanguageIcon from '@mui/icons-material/Language';
 
 const Connect = () => {
 
@@ -15,16 +16,13 @@ const Connect = () => {
         window.open('https://youtube.com/@sparkzccet', "_blank")
     }
  
-    const handleMailClick = () => {
-        window.open('mailto:sparkzccet01@gmail.com', "_blank")
-        // const email = 'sparkzccet01@gmail.com';
-        // const mailtoLink = `mailto:${email}`;
-        // window.location.href = mailtoLink;
+    const handleWebClick = () => {
+        window.open('https://carmelcet.in', "_blank")
     }
 
 
     return (
-        <Stack sx={{ backgroundColor: 'rgba(52, 54, 52, 0.219)', p: { xs: 3, sm: 5 } }} direction='column' gap={3}  >
+        <Stack sx={{ backgroundColor: 'rgba(52, 54, 52, 0.219)', p: { xs: 3, sm: 4 } }} direction='column' gap={3}  >
             <Stack justifyContent='start' alignItems='start'>
                 <Typography sx={{
                     fontFamily: 'Kelly Slab',
@@ -37,9 +35,9 @@ const Connect = () => {
                     CONNECT US
                 </Typography>
             </Stack>
-            <Stack display='flex' sx={{ flexDirection: { xs: 'column', sm: 'row' } }} gap={3}>
+            <Stack  display='flex' sx={{ flexDirection: { xs: 'column', sm: 'row' } }} gap={3}>
                 <Stack flex={5} direction='row' sx={{ mb: { xs: 3, sm: 1 } }} justifyContent='space-between' alignItems='center' >
-                    <Stack flex={6} >
+                    <Stack gap={3} flex={6} >
                         <Stack>
                             <Typography sx={{
                                 fontFamily: 'Kelly Slab',
@@ -84,7 +82,7 @@ const Connect = () => {
                             </Typography>
                         </Stack>
                     </Stack>
-                    <Stack flex={6} justifyContent='end' alignItems='end'>
+                    <Stack gap={3} flex={6} justifyContent='end' alignItems='end'>
                         <Stack direction='row' gap={1} justifyContent='center' alignItems='center'>
                             <CallIcon sx={{fontSize:'17px'}}/>
                             <Typography href="tel:+4733378901" sx={{
@@ -145,7 +143,7 @@ const Connect = () => {
                         </Stack>
                     </Stack>
                 </Stack>
-                <Stack flex={5}>
+                <Stack flex={5} justifyContent='center' alignItems='center'>
                     <iframe title='map' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15743.240295000398!2d76.3430202!3d9.4380491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf49b9fc5a41d110a!2sCarmel%20College%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1624884010736!5m2!1sen!2sin" width="100%" height="280" allowfullscreen="" loading="lazy" style={{ borderRadius: '10px' }}></iframe>
                 </Stack>
                 <Stack flex={2} display='flex' sx={{ flexDirection: { xs: 'row', sm: 'column' } }} gap={3} p={3} justifyContent='center' alignItems='center'>
@@ -162,6 +160,11 @@ const Connect = () => {
                     <Stack>
                         <IconButton onClick={handleInstaClick}>
                             <InstagramIcon sx={{ fontSize: '50px' }} />
+                        </IconButton>
+                    </Stack>
+                    <Stack>
+                        <IconButton onClick={handleWebClick}>
+                            <LanguageIcon sx={{ fontSize: '50px' }} />
                         </IconButton>
                     </Stack>
                 </Stack>

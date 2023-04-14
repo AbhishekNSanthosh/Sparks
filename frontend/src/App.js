@@ -7,13 +7,12 @@ import DepEventList from "./Pages/DepEventList";
 import SingleEvent from "./Pages/SingleEvent";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import SplashPage from "./Components/SplashPage";
 import Credits from "./Pages/Credits";
-import axios from 'axios'
 import Register from "./Pages/Register";
 import Cookies from 'js-cookie'
 import Login from "./Pages/Login";
 import SplashScreenPage from "./Pages/SplashScreenPage";
+import './styles.css'
 
 
 
@@ -90,7 +89,9 @@ function App() {
               <SplashScreenPage />
 
                   :
+                  <Stack className="container">
                   <MainPage user={user} />
+                  </Stack>
                 }
               </motion.div>
           } />

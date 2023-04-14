@@ -16,6 +16,8 @@ import arnold from '../Assets/dev/arnold.png'
 import hari from '../Assets/dev/hairkrishnan.png'
 import Connect from '../Components/Connect'
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { SocialIcon } from 'react-social-icons';
+
 
 const Credits = () => {
 
@@ -111,8 +113,8 @@ const Credits = () => {
                         </Stack>
                         <Stack gap={2} alignItems='center' justifyContent='space-around' display='flex' sx={{ flexDirection: { sm: 'row', xs: 'column' } }}>
                             {developers && developers.map((design, index) => (
-                                <Stack key={index} direction='column' flex={4} sx={{ p: { xs: 1, sm: 2 } }} alignItems='center' justifyContent='center' gap={2}>
-                                        <Link href={design?.insta}>
+                                <Stack key={index} direction='column' flex={4} sx={{ p: { xs: 1, sm: 2 } }} alignItems='center' justifyContent='center' gap={3}>
+                                    <Link href={design?.insta}>
                                         <Stack position='relative' className='profile-image' onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} alignItems='center' justifyContent='center' sx={{ height: { sm: '250px', xs: '220px' }, width: { sm: '250px', xs: '250px' }, border: '1px solid red', borderRadius: '10px', backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05))' }}>
                                             <Box sx={{ height: { sm: '250px', xs: '250px' }, width: { sm: '250px', xs: '250px' } }} component='img' src={design?.img} />
 
@@ -127,27 +129,32 @@ const Credits = () => {
                                                 </Stack>
                                             }
                                         </Stack>
-                                        </Link>
-                                        <Stack gap={2} justifyContent='center' alignItems='center' direction='column'>
+                                    </Link>
+
+                                    <Stack gap={2} justifyContent='center' alignItems='center' direction='column'>
+                                        <Stack gap={1} direction='row' justifyContent='center' alignItems='center'>
+
+                                            <SocialIcon style={{ height: '30px', width: '30px' }} url={`${design?.insta}`} />
                                             <Typography
                                                 sx={{
                                                     mt: 1,
                                                     fontFamily: 'Kelly Slab',
                                                     fontSize: { sm: '18px', xs: '15px' },
                                                     fontWeight: '700',
-                                                    textDecoration:'none',color:'inherit'
+                                                    textDecoration: 'none', color: 'inherit'
                                                 }}>{design?.name}</Typography>
-                                            <Typography
-                                                sx={{
-                                                    mt: 1,
-                                                    fontFamily: 'Kelly Slab',
-                                                    fontSize: { sm: '18px', xs: '15px' },
-                                                    fontWeight: '700',
-                                                    textDecoration:'none',color:'inherit'
-                                                }}>{design?.sem}</Typography>
                                         </Stack>
+                                        <Typography
+                                            sx={{
+                                                mt: 1,
+                                                fontFamily: 'Kelly Slab',
+                                                fontSize: { sm: '18px', xs: '15px' },
+                                                fontWeight: '700',
+                                                textDecoration: 'none', color: 'inherit'
+                                            }}>{design?.sem}</Typography>
                                     </Stack>
-                             
+                                </Stack>
+
                             ))}
                         </Stack>
                     </Stack>
@@ -163,13 +170,13 @@ const Credits = () => {
                         </Stack>
                         <Stack gap={2} alignItems='center' justifyContent='center' display='flex' sx={{ flexDirection: { sm: 'row', xs: 'column' } }}>
                             {designer && designer.map((design, index) => (
-                                <Stack  key={index + 3} direction='column' flex={4} sx={{ p: { xs: 1, sm: 2 },textDecoration:'none',color:'inherit' }} alignItems='center' justifyContent='center' gap={2}>
-                                        <Link href={design?.insta}>
+                                <Stack key={index + 3} direction='column' flex={4} sx={{ p: { xs: 1, sm: 2 }, textDecoration: 'none', color: 'inherit' }} alignItems='center' justifyContent='center' gap={3}>
+                                    <Link href={design?.insta}>
                                         <Stack position='relative' className='profile-image' onMouseEnter={() => setHoveredIndex(index + 3)} onMouseLeave={() => setHoveredIndex(null)} alignItems='center' justifyContent='center' sx={{ height: { sm: '250px', xs: '220px' }, width: { sm: '250px', xs: '250px' }, border: '1px solid red', borderRadius: '10px', backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05))' }}>
                                             <Box sx={{ height: { sm: '250px', xs: '250px' }, width: { sm: '250px', xs: '250px' } }} component='img' src={design?.img} />
 
                                             {hoveredIndex === index + 3 &&
-                                                <Stack  borderRadius='10px' alignItems='center' justifyContent='center' sx={{ position: 'absolute', height: { sm: '250px', xs: '250px' }, width: { sm: '250px', xs: '250px' }, cursor: 'pointer', backgroundImage: 'linear-gradient(rgba(209, 71, 71, 0.5), rgba(236, 69, 69, 0.5))' }}>
+                                                <Stack borderRadius='10px' alignItems='center' justifyContent='center' sx={{ position: 'absolute', height: { sm: '250px', xs: '250px' }, width: { sm: '250px', xs: '250px' }, cursor: 'pointer', backgroundImage: 'linear-gradient(rgba(209, 71, 71, 0.5), rgba(236, 69, 69, 0.5))' }}>
                                                     <Link href={design?.insta}>
 
                                                         <InstagramIcon sx={{
@@ -182,26 +189,30 @@ const Credits = () => {
 
                                             }
                                         </Stack>
-                                        </Link>
-                                        <Stack justifyContent='center' alignItems='center' direction='column'>
+                                    </Link>
+                                    <Stack justifyContent='center' alignItems='center' direction='column' >
+                                        <Stack gap={1} direction='row' justifyContent='center' alignItems='center'>
+
+                                            <SocialIcon style={{ height: '30px', width: '30px' }} url={`${design?.insta}`} />
                                             <Typography
                                                 sx={{
                                                     mt: 1,
                                                     fontFamily: 'Kelly Slab',
                                                     fontSize: { sm: '18px', xs: '15px' },
                                                     fontWeight: '700',
-                                                    textDecoration:'none',color:'inherit'
+                                                    textDecoration: 'none', color: 'inherit'
                                                 }}>{design?.name}</Typography>
-                                            <Typography
-                                                sx={{
-                                                    mt: 1,
-                                                    fontFamily: 'Kelly Slab',
-                                                    fontSize: { sm: '18px', xs: '15px' },
-                                                    fontWeight: '700',
-                                                    textDecoration:'none',color:'inherit'
-                                                }}>{design?.sem}</Typography>
                                         </Stack>
+                                        <Typography
+                                            sx={{
+                                                mt: 1,
+                                                fontFamily: 'Kelly Slab',
+                                                fontSize: { sm: '18px', xs: '15px' },
+                                                fontWeight: '700',
+                                                textDecoration: 'none', color: 'inherit'
+                                            }}>{design?.sem}</Typography>
                                     </Stack>
+                                </Stack>
                             ))}
                         </Stack>
                     </Stack>

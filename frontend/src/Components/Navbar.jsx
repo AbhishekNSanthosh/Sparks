@@ -4,12 +4,7 @@ import logo from '../Assets/sparkzLogo.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { motion } from 'framer-motion'
-
-import { auth, googleAuthProvider } from '../Firebase/Firebase'
-import Cookies from 'js-cookie'
 
 
 const Navbar = ({ hideComponent }) => {

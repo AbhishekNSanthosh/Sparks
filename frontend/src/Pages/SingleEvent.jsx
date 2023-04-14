@@ -518,7 +518,7 @@ const SingleEvent = ({ user }) => {
               backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
-              width: '360px',
+              width: '340px',
               border: '1px solid white',
               borderRadius: '5px'
 
@@ -664,23 +664,24 @@ const SingleEvent = ({ user }) => {
                       </Stack>
                     </Stack>
                   } else {
-                    return <Stack direction='row' justifyContent='center' alignItems='center'>
+                    // return <Stack direction='row' justifyContent='center' alignItems='center'>
 
-                      <Typography sx={{
-                        fontFamily: 'Kelly Slab',
-                        fontSize: '18px',
-                        fontWeight: '700',
+                    //   <Typography sx={{
+                    //     fontFamily: 'Kelly Slab',
+                    //     fontSize: '18px',
+                    //     fontWeight: '700',
 
-                      }} >
-                        There will be no prize!.
-                      </Typography>
-                    </Stack>
+                    //   }} >
+                    //     Check description!
+                    //   </Typography>
+                    // </Stack>
+                    <></>
                   }
                 })()}
               </Stack>
               <Stack direction='row' gap={5}>
                 <Stack mt={1} justifyContent='center' alignItems='center'>
-                  <Box width='118px' component='img' src={register} />
+                  <Box width='138px' component='img' src={register} />
                   <Typography sx={{
                     fontFamily: 'Kelly Slab',
                     fontSize: '13px',
@@ -691,10 +692,10 @@ const SingleEvent = ({ user }) => {
                   </Typography>
                 </Stack>
                 <Stack mt={1} justifyContent='center' alignItems='center'>
-                  <Box width='118px' component='img' src={register} />
+                  <Box width='128px' component='img' src={register} />
                   <Typography sx={{
                     fontFamily: 'Kelly Slab',
-                    fontSize: '13px',
+                    fontSize: '11px',
                     fontWeight: '700',
                     position: 'absolute'
                   }} >
@@ -702,7 +703,7 @@ const SingleEvent = ({ user }) => {
                   </Typography>
                 </Stack>
               </Stack>
-              <Stack p={1} justifyContent='center' alignItems='center'>
+              <Stack p={1} mt={2} justifyContent='center' alignItems='center'>
                 <Typography sx={{
                   fontFamily: 'Kelly Slab',
                   fontSize: '14px',
@@ -722,11 +723,11 @@ const SingleEvent = ({ user }) => {
                   </Typography>
                 </Stack>
                 {eventDetails?.rules && eventDetails?.rules.map((rule, index) => (
-                  <Stack direction='row' gap={1}>
-                    <Stack>
+                  <Stack direction='row' gap={1} >
+                    <Stack justifyContent='center' alignItems='center'>
                       *
                     </Stack>
-                    <Stack>
+                    <Stack justifyContent='center' alignItems='center'>
                       <Typography sx={{
                         fontFamily: 'Kelly Slab',
                         fontSize: '14px',
@@ -760,7 +761,7 @@ const SingleEvent = ({ user }) => {
                         <WhatsAppIcon sx={{fontSize:'15px'}}/>
                       <Typography sx={{
                         fontFamily: 'Kelly Slab',
-                        fontSize: '12px',
+                        fontSize: '13px',
                         fontWeight: '500',
                       }} >
                         <Link href={`https://wa.me/+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
