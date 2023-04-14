@@ -378,7 +378,7 @@ const events = {
             prizeCount: 2,
             type: "Team(3 Members)",
             mode: "Venue(MT Lab)",
-            date: "19 April 2023",
+            date: "19",
             time: "10:00 AM - 12:00 PM",
             desc: "The competition is to unveil talent of your team as a bricklayer. Build the bricks perfectly in the stipulated time and you will be the winner.",
             rules: [
@@ -404,7 +404,7 @@ const events = {
             prizeCount: 2,
             type: "Team(4 Members)",
             mode: "Venue(SURVEY Lab)",
-            date: "20 April 2023",
+            date: "20",
             time: "10:00 AM - 1:00 PM",
             desc: "Here it is, THE BEST SURVEYOR, where you can exhibit your top notch-skills in surveying. Techniques are all that matters in here, so bring it up.",
             rules: [
@@ -431,7 +431,7 @@ const events = {
             prizeCount: 2,
             type: "Team(3 Members)",
             mode: "Venue(MT Lab)",
-            date: "20 April 2023",
+            date: "20",
             time: "1:00 PM - 3:00 PM",
             desc: "Its time to enhance and show your interest on concrete mix design. We present you mix design workshop and mix design competition with exciting prices.",
             rules: [
@@ -459,7 +459,7 @@ const events = {
             prizeCount: 2,
             type: "Team(3 Members)",
             mode: "Venue(Near Library)",
-            date: "19 April 2023",
+            date: "19",
             time: "10:00 PM - 4:30 PM",
             desc: "Two teams each of 3 will face off in a football match on an inflated court with slippery floor. A great way to pass the time for both casual and hardcore soccer enthusiasts.",
             rules: [
@@ -485,7 +485,7 @@ const events = {
             type: "Team(2 Members)",
             gform: "https://forms.gle/tnaFg7fHaiz7vC7G7",
             mode: "Venue(S7/S8 CIVIL)",
-            date: "20 April 2023",
+            date: "20",
             time: "10:00 PM - 2:00 PM",
             desc: "An event where you can explore the Vincent van Gogh in you.  Face to face is a competition of painting on your friend’s face and unlock your creative skills.",
             rules: [
@@ -510,7 +510,7 @@ const events = {
             type: "Team(2 Members)",
             gform: "https://forms.gle/gEmXnBoKqpKXxKEq7",
             mode: "Venue(CIVIL LAB)",
-            date: "19 April 2023",
+            date: "19",
             time: "9:30 PM - 12:30 PM",
             desc: "This event demonstrates mastery in AutoCAD skills. Sparks 2k23 presents clash of CADD, a competition of designing residential building with unique ways.",
             rules: [
@@ -539,7 +539,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/nja3B7UyogPSTXrr8",
             mode: "Venue(NEAR LIBRARY)",
-            date: "19 April 2023",
+            date: "19",
             time: "10:00 AM - 4:00 PM",
             desc: "What can you do in 60 seconds?\nIf you can complete a number of tasks which require basic skillset within one minute, then you can take home some real money.\nPrize\n₹50 on successful completion of 5 rounds\n₹100 on successful completion of 10 rounds\n₹200 on successful completion of 15 rounds",
             rules: [
@@ -565,7 +565,7 @@ const events = {
             type: "Team(3 Members)",
             gform: "https://forms.gle/oo58mN8c1nMLE4iT6",
             mode: "Venue(NEAR LIBRARY)",
-            date: "19,20 April 2023",
+            date: "19,20",
             time: "10:00 PM - 4:00 PM",
             desc: "Are you up for the challenge? Can you escape the dreadful room? Have a blast solving puzzles and tricks with your buddies and escape the room which has some hidden surprises.",
             rules: [
@@ -590,7 +590,7 @@ const events = {
             prizeCount: 1,
             type: "Team(4 Members)",
             mode: "Venue(S3/S4 CIVIL)",
-            date: "19,20 April 2023",
+            date: "19,20",
             time: "10:00 PM - 4:00 PM",
             desc: "The Hunt is on! Are you ready???\nThis is Mysterio (The Treasure Hunt) presenting civil engineering association as part of Sparkz 2k23.\nEnsure your entry through registration. Come on the Treasure is waiting for you!!",
             rules: [
@@ -618,7 +618,7 @@ const events = {
             type: "Team(4 Members)",
             gform: "https://forms.gle/PuxqX1BdMhh6KJdn6",
             mode: "Update soon!",
-            date: "20 April 2023",
+            date: "20",
             time: "9:00 PM - 4:00 PM",
             desc: "This is it, an event where you can show your strength by hitting fire paintballs at opposition without being hit yourself,and eliminating them from the game.Sparkz 2k23 presents Paintball, a competition involves teams or individual players competing against each to eliminate other players by hitting them with paint filled pellets fired from a compressed gas powered gun.The team that dominates wins.",
             rules: [
@@ -794,7 +794,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/Z8FFH2Fn6rGkuGWe7",
             mode: "VENUE (TE LAB)",
-            date: "19,20 April 2023",
+            date: "19,20 ",
             time: " 10:00AM - 12:00 PM",
             desc: "",
             reg_fees: "",
@@ -812,7 +812,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/Xx1hMw2gczV1m8uZ8",
             mode: "VENUE()",
-            date: "19,20 April 2023",
+            date: "19,20",
             time: "10:00AM - 12:00 PM",
             desc: "To move towards a more sustainable and circular economy, a more efficient recovery processes for end-of-life vehicles and their constituent components and materials is needed. To enable reuse, remanufacturing, high-value recycling and other circular strategies, a well-functioning disassembly is arranged in SPARKZ 2K23 .",
             rules: [
@@ -836,7 +836,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/LzBoVSqjQHhe8j4XA",
             mode: "VENUE (S7/S8 MECH)",
-            date: "19,20 April 2023",
+            date: "19,20 ",
             time: " 10:00AM - 12:00 PM",
             desc: "To move towards a more sustainable and circular economy, a more efficient recovery processes for end-of-life vehicles and their constituent components and materials is needed. To enable reuse, remanufacturing, high-value recycling and other circular strategies, a well-functioning disassembly is arranged in SPARKZ 2K23 .",
             rules: [
@@ -1014,7 +1014,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/Z8FFH2Fn6rGkuGWe7",
             mode: "VENUE (TE LAB)",
-            date: "19,20 April 2023",
+            date: "19,20 ",
             time: " 10:00AM - 12:00 PM",
             desc: "",
             reg_fees: "",
@@ -1032,7 +1032,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/Xx1hMw2gczV1m8uZ8",
             mode: "VENUE()",
-            date: "19,20 April 2023",
+            date: "19,20",
             time: "10:00AM - 12:00 PM",
             desc: "To move towards a more sustainable and circular economy, a more efficient recovery processes for end-of-life vehicles and their constituent components and materials is needed. To enable reuse, remanufacturing, high-value recycling and other circular strategies, a well-functioning disassembly is arranged in SPARKZ 2K23 .",
             rules: [
@@ -1056,7 +1056,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/LzBoVSqjQHhe8j4XA",
             mode: "VENUE (S7/S8 MECH)",
-            date: "19,20 April 2023",
+            date: "19,20",
             time: " 10:00AM - 12:00 PM",
             desc: "To move towards a more sustainable and circular economy, a more efficient recovery processes for end-of-life vehicles and their constituent components and materials is needed. To enable reuse, remanufacturing, high-value recycling and other circular strategies, a well-functioning disassembly is arranged in SPARKZ 2K23 .",
             rules: [
@@ -1083,7 +1083,7 @@ const events = {
             type: "Team(2 Members)",
             gform: "https://forms.gle/q16pX2Ncud7hP34G7",
             mode: "Venue()",
-            date: "19,20 April 2023 ",
+            date: "19,20",
             time: "",
             desc: "Can you survive on this perilous path and succeed?",
             rules: [
@@ -1111,7 +1111,7 @@ const events = {
             type: "Team(3 Members)",
             gform: "https://forms.gle/p8Wd7UxYA132u5Vc7",
             mode: "Venue()",
-            date: "19 April 2023 ",
+            date: "19 ",
             time: "",
             desc: "Participants will have to make their robot run in a given line path using Arduino application within the given time limit.",
             rules: [
@@ -1141,7 +1141,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/C1G2rkUuNYNcPjHh9",
             mode: "Venue()",
-            date: "19,20 April 2023 ",
+            date: "19,20",
             time: "",
             desc: "The participants have to design the given system using simulink tool available in MATLAB and obtain the proper output.",
             rules: [
@@ -1171,7 +1171,7 @@ const events = {
             type: "Team(2 Members)",
             gform: "https://forms.gle/6VmdhgC2GVp1PYDU6",
             mode: "Venue()",
-            date: "19,20 April 2023 ",
+            date: "19,20",
             time: "",
             desc: "Participants has to troubleshoot the bug in the given circuit and obtain the required output successfully within the time limit",
             rules: [
@@ -1198,7 +1198,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/pbcLVBqBKu8PN6C37",
             mode: "Venue()",
-            date: "19 April 2023 ",
+            date: "19",
             time: "",
             desc: "In this participants knowledge on the basis of electronics and build a base in this field will be tested.",
             rules: [
@@ -1231,7 +1231,7 @@ const events = {
             type: "Individual",
             gform: "https://forms.gle/t5z15jpUPhRpUUBQ9",
             mode: "Venue()",
-            date: "19,20 April 2023 ",
+            date: "19,20",
             time: "Submit before 20 April",
             desc: "Can you survive on this perilous path and succeed?",
             rules: [
@@ -1261,7 +1261,7 @@ const events = {
             type: "",
             gform: "https://forms.gle/C1G2rkUuNYNcPjHh9",
             mode: "",
-            date: "19,20 April 2023 ",
+            date: "19,20",
             time: "",
             desc: "",
             rules: [

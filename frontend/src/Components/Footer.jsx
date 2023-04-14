@@ -6,7 +6,7 @@ const Footer = () => {
 
     const navigate = useNavigate()
     return (
-        <Stack gap={1} pb={2} sx={{ backgroundColor: 'rgba(5, 5, 5)', p: { xs: 1, sm: 2 } }} width='100%' direction='column' >
+        <Stack gap={1} pb={3} sx={{ backgroundColor: 'rgba(5, 5, 5)', p: { xs: 1, sm: 2 } }} width='100%' direction='column' >
             <Stack direction='row' alignItems='center' justifyContent='center'>
                 <Stack mt={1} gap={1} alignItems='center' justifyContent='center' direction='column'>
 
