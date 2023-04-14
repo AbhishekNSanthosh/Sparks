@@ -19,11 +19,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Footer from '../Components/Footer'
 import './styles.css'
-import axios from 'axios'
 import Cookies from 'js-cookie'
-import Backdrop from '@mui/material/Backdrop';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const SingleEvent = ({ user }) => {
@@ -134,7 +130,7 @@ const SingleEvent = ({ user }) => {
           <Navbar hideComponent={hideComponent} user={user} />
         </Stack>
         <Stack mt={6} alignItems='center' mb={1} >
-          <Stack direction='column' p={2} width='900px' sx={{
+          <Stack direction='column' p={1} width='900px' sx={{
             // backgroundColor: 'rgba(5, 5, 5)',
             position: 'relative',
             // backgroundImage: `url(${eventbg})`,
@@ -514,7 +510,7 @@ const SingleEvent = ({ user }) => {
           </Stack>
 
           {/* responsive */}
-          <Stack sx={{ display: { xs: 'flex', sm: 'none' } }} gap={2} p={3} >
+          <Stack sx={{ display: { xs: 'flex', sm: 'none' } }} gap={2} p={2} >
             <Stack direction='column' p={2} sx={{
               // backgroundColor: 'rgba(5, 5, 5)',
               position: 'relative',
@@ -522,7 +518,7 @@ const SingleEvent = ({ user }) => {
               backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
-              width: '310px',
+              width: '360px',
               border: '1px solid white',
               borderRadius: '5px'
 
@@ -540,39 +536,6 @@ const SingleEvent = ({ user }) => {
                 <Box height='400px' width='100%' component='img' src={eventDetails?.posterImg} />
               </Stack>
               <Stack justifyContent='center' alignItems='center' mt={1} gap={2}>
-                {/* {registered ?
-                  <Button sx={{
-                    backgroundColor: 'blue', height: '43px', width: '100%',
-                    "&:hover": {
-                      backgroundColor: { xs: 'blue', sm: "red" }
-                    }
-                  }}>
-                    <Typography sx={{
-                      fontFamily: 'Kelly Slab',
-                      fontSize: '15px',
-                      fontWeight: '700',
-                      position: 'absolute'
-                    }} >
-                      Registered!
-                    </Typography>
-                  </Button>
-                  :
-                  <Button onClick={() => setOpen(true)} sx={{
-                    backgroundColor: 'blue', height: '43px', width: '100%',
-                    "&:hover": {
-                      backgroundColor: "red"
-                    }
-                  }}>
-                    <Typography sx={{
-                      fontFamily: 'Kelly Slab',
-                      fontSize: '15px',
-                      fontWeight: '700',
-                      position: 'absolute'
-                    }} >
-                      REGISTER {eventDetails?.reg_fees}/-
-                    </Typography>
-                  </Button>
-                } */}
                 {eventDetails?.gform &&
                   <Button onClick={handleButtonClick} sx={{
                     backgroundColor: 'red', height: '50px', width: '100%',
@@ -794,13 +757,13 @@ const SingleEvent = ({ user }) => {
                   {eventDetails?.contact_coordinator && eventDetails?.contact_coordinator.map((contact, index) => (
 
                     <Stack key={index} direction='row' gap={1}>
-                        <WhatsAppIcon sx={{fontSize:'20px'}}/>
+                        <WhatsAppIcon sx={{fontSize:'15px'}}/>
                       <Typography sx={{
                         fontFamily: 'Kelly Slab',
-                        fontSize: '14px',
+                        fontSize: '12px',
                         fontWeight: '500',
                       }} >
-                        <Link href={`wa.me/+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
+                        <Link href={`https://wa.me/+91${contact}`} sx={{ textDecoration: 'none', color: "inherit" }}>
                           +91 {contact}
                         </Link>
                       </Typography>

@@ -50,7 +50,7 @@ const Faqs = () => {
                     <Stack width='100%' direction='row'>
                         <Typography sx={{
                             fontFamily: 'Kelly Slab',
-                            fontSize: { sm: '17px', xs: '15px' },
+                            fontSize: { sm: '17px', xs: '13px' },
                             fontWeight: '700',
                             color: '#a3a3a0'
 

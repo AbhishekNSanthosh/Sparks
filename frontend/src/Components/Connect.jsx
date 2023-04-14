@@ -3,6 +3,7 @@ import React from 'react'
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import CallIcon from '@mui/icons-material/Call';
 
 const Connect = () => {
 
@@ -84,7 +85,8 @@ const Connect = () => {
                         </Stack>
                     </Stack>
                     <Stack flex={6} justifyContent='end' alignItems='end'>
-                        <Stack>
+                        <Stack direction='row' gap={1} justifyContent='center' alignItems='center'>
+                            <CallIcon sx={{fontSize:'17px'}}/>
                             <Typography href="tel:+4733378901" sx={{
                                 fontFamily: 'Kelly Slab',
                                 fontSize: { xs: '17px', sm: '20px' },
@@ -93,11 +95,12 @@ const Connect = () => {
                                 textDecoration: 'none'
                             }} >
                                 <a href="tel:+917593942127" style={{ textDecoration: 'none', color: "inherit" }}>
-                                    7593942127
+                                    +91 7593942127
                                 </a>
                             </Typography>
                         </Stack>
-                        <Stack>
+                        <Stack direction='row' gap={1} justifyContent='center' alignItems='center'>
+                            <CallIcon sx={{fontSize:'17px'}}/>
                             <Typography sx={{
                                 fontFamily: 'Kelly Slab',
                                 fontSize: { xs: '17px', sm: '20px' },
@@ -106,12 +109,13 @@ const Connect = () => {
 
                             }} >
                                 <a href="tel:+918075323850" style={{ textDecoration: 'none', color: "inherit" }}>
-                                    8075323850
+                                +91 8075323850
                                 </a>
 
                             </Typography>
                         </Stack>
-                        <Stack>
+                        <Stack direction='row' gap={1} justifyContent='center' alignItems='center'>
+                            <CallIcon sx={{fontSize:'17px'}}/>
                             <Typography sx={{
                                 fontFamily: 'Kelly Slab',
                                 fontSize: { xs: '17px', sm: '20px' },
@@ -120,12 +124,13 @@ const Connect = () => {
 
                             }} >
                                 <a href="tel:+918589059517" style={{ textDecoration: 'none', color: "inherit" }}>
-                                    8589059517
+                                +91 8589059517
                                 </a>
 
                             </Typography>
                         </Stack>
-                        <Stack>
+                        <Stack direction='row' gap={1} justifyContent='center' alignItems='center'>
+                            <CallIcon sx={{fontSize:'17px'}}/>
                             <Typography sx={{
                                 fontFamily: 'Kelly Slab',
                                 fontSize: { xs: '17px', sm: '20px' },
@@ -133,7 +138,9 @@ const Connect = () => {
                                 color: '#a3a3a0'
 
                             }} >
-                                8592809251
+                                  <a href="tel:+918592809251" style={{ textDecoration: 'none', color: "inherit" }}>
+                                  +91 8592809251
+                                </a>
                             </Typography>
                         </Stack>
                     </Stack>
