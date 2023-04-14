@@ -143,28 +143,28 @@ const Connect = () => {
                         </Stack>
                     </Stack>
                 </Stack>
-                <Stack flex={5} justifyContent='center' alignItems='center'>
+                <Stack flex={6} sx={{p:{xs:2,sm:5}}} justifyContent='center' alignItems='center'>
                     <iframe title='map' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15743.240295000398!2d76.3430202!3d9.4380491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf49b9fc5a41d110a!2sCarmel%20College%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1624884010736!5m2!1sen!2sin" width="100%" height="280" allowfullscreen="" loading="lazy" style={{ borderRadius: '10px' }}></iframe>
                 </Stack>
-                <Stack flex={2} display='flex' sx={{ flexDirection: { xs: 'row', sm: 'column' } }} gap={3} p={3} justifyContent='center' alignItems='center'>
+                <Stack flex={1} display='flex' sx={{ flexDirection: { xs: 'row', sm: 'column' } }} gap={3} p={3} justifyContent='center' alignItems='center'>
                     <Stack>
                         <IconButton  onClick={handleYoutubeClick}>
-                            <YouTubeIcon sx={{ fontSize: '50px' }} />
+                            <YouTubeIcon sx={{ fontSize:{sm: '50px',xs:'35px'} }} />
                         </IconButton>
                     </Stack>
                     <Stack>
                         <IconButton href='mailto:sparkzccet01@gmail.com'>
-                            <EmailIcon sx={{ fontSize: '50px' }} />
+                            <EmailIcon  sx={{ fontSize:{sm: '50px',xs:'35px'} }} />
                         </IconButton>
                     </Stack>
                     <Stack>
                         <IconButton onClick={handleInstaClick}>
-                            <InstagramIcon sx={{ fontSize: '50px' }} />
+                            <InstagramIcon  sx={{ fontSize:{sm: '50px',xs:'33px'} }} />
                         </IconButton>
                     </Stack>
                     <Stack>
                         <IconButton onClick={handleWebClick}>
-                            <LanguageIcon sx={{ fontSize: '50px' }} />
+                            <LanguageIcon  sx={{ fontSize:{sm: '50px',xs:'32px'} }} />
                         </IconButton>
                     </Stack>
                 </Stack>
