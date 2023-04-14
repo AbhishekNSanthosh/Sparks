@@ -134,7 +134,7 @@ const Credits = () => {
                                     <Stack gap={2} justifyContent='center' alignItems='center' direction='column'>
                                         <Stack gap={1} direction='row' justifyContent='center' alignItems='center'>
 
-                                            <SocialIcon style={{ height: '30px', width: '30px' }} url={`${design?.insta}`} />
+                                            <SocialIcon  style={{ height: '30px', width: '30px',marginTop:'1px' }} url={`${design?.insta}`} />
                                             <Typography
                                                 sx={{
                                                     mt: 1,
@@ -193,7 +193,7 @@ const Credits = () => {
                                     <Stack justifyContent='center' alignItems='center' direction='column' >
                                         <Stack gap={1} direction='row' justifyContent='center' alignItems='center'>
 
-                                            <SocialIcon style={{ height: '30px', width: '30px' }} url={`${design?.insta}`} />
+                                            <SocialIcon style={{ height: '30px', width: '30px',marginTop:'1px' }} url={`${design?.insta}`} />
                                             <Typography
                                                 sx={{
                                                     mt: 1,
