@@ -102,7 +102,7 @@ const events = {
         {
             id: 3,
             title: "CYBERVERSE – VR GAMING",
-            first_price: "1500",
+            first_price: "1000",
             second_price: "",
             prizeCount: 1,
             third_price: "",
