@@ -205,8 +205,8 @@ const events = {
             ],
             reg_fees: "20",
             posterImg: Spiderz,
-            coordinator: ["Adithyan S Pillai", "Neeraj J", "Sreelekshmi"],
-            contact_coordinator: ["9605987219", "8281307620", "8129374881"],
+            coordinator: ["Adithyan S Pillai", "Neeraj J", "Sreelekshmi","Aryalekshmi"],
+            contact_coordinator: ["9605987219", "8281307620", "8129374881","8129374881"],
         },
         {
             id: 7,
@@ -354,7 +354,7 @@ const events = {
             time: "10:00 Am - 4:00 PM",
             desc: "Experience the Reality in Ultimate gaming\nThe anticipation comes to an end!!!!\nAre you a hardcore gamer looking for a fun and engaging way to connect with other like-minded gamers? Look no further than our upcoming gaming room event! Join with us for non-stop gaming action, socializing, and friendly competition...10+ Games with highly modified gaming equipment's have worth up to 1 million.\nEntry fees\n20/- (for 15 minutes/per game)\n50/- (for 30 minutes/Any games)\nSo mark your calendar, invite your friends, and get ready to level up at our gaming room event.\nGive Aways \n 1-Gaming Keyboard\n2-Gaming Mouse\n3-Gaming Headphone\n4-Gaming Mousepad",
             rules: [
-                "No Spot Registration.",
+                "Spot Registration available.",
                 "Equipment care: Treat gaming equipment with care and report any malfunctions or damage to the volunteers. Do not tamper with or modify the equipment in any way, if any malfunctioning in device happens, it will result you to pay fine of the device amount!!!",
                 "Time limits: Time limits may be imposed to ensure that all players have a chance to use the gaming room. Players should be considerate of others and avoid monopolizing the equipment or facilities.",
                 "Volunteers instructions: Players should follow any instructions or requests from the volunteers of the gaming room. Failing to comply with rules or volunteers’ instructions may result in suspension or revocation of gaming room privileges.",
@@ -486,7 +486,7 @@ const events = {
             gform: "https://forms.gle/tnaFg7fHaiz7vC7G7",
             mode: "Venue(S7/S8 CIVIL)",
             date: "20",
-            time: "10:00 PM - 2:00 PM",
+            time: "10:00 AM - 2:00 PM",
             desc: "An event where you can explore the Vincent van Gogh in you.  Face to face is a competition of painting on your friend’s face and unlock your creative skills.",
             rules: [
                 "Participants will be provided with Acrylic paint and brushes.",

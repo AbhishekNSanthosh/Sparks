@@ -13,6 +13,7 @@ import Cookies from 'js-cookie'
 import Login from "./Pages/Login";
 import SplashScreenPage from "./Pages/SplashScreenPage";
 import './styles.css'
+import NotFound from "./Pages/NotFound";
 
 
 
@@ -159,6 +160,17 @@ function App() {
               transition={{ duration: 1 }}
             >
               <Login user={user} getReload={getReload} />
+            </motion.div>
+          } />
+        </Routes>
+        <Routes>
+          <Route path="*" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <NotFound />
             </motion.div>
           } />
         </Routes>
