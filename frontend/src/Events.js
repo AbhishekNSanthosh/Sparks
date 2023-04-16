@@ -206,7 +206,7 @@ const events = {
             reg_fees: "20",
             posterImg: Spiderz,
             coordinator: ["Adithyan S Pillai", "Neeraj J", "Sreelekshmi","Aryalekshmi"],
-            contact_coordinator: ["9605987219", "8281307620", "8129374881","8129374881"],
+            contact_coordinator: ["9605987219", "8281307620", "8129374881","7994292490"],
         },
         {
             id: 7,
