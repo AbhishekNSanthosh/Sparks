@@ -163,17 +163,6 @@ function App() {
             </motion.div>
           } />
         </Routes>
-        <Routes>
-          <Route path="*" element={
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <NotFound />
-            </motion.div>
-          } />
-        </Routes>
       </Router>
     </ThemeProvider>
 

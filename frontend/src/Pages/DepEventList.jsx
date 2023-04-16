@@ -176,66 +176,6 @@ const DepEventList = ({ user }) => {
 
                                         </Grid>
                                     ))}
-                                    {/* <Grid item xs={4} sm={4} md={4} >
-
-
-                                        <Box
-                                            onClick={() => navigate(`/branch/${params.event}/2`)}
-                                            bgcolor='gray'
-                                            component='img'
-                                            borderRadius='5px'
-                                            border='2px solid white'
-                                            sx={{ height: { xs: '100%', sm: '100%' }, width: { xs: '310px', sm: '100%' } }}
-                                            src={card} />
-
-
-                                    </Grid>
-                                    <Grid item xs={4} sm={4} md={4} >
-
-
-                                        <Box
-                                            onClick={() => navigate(`/branch/${params.event}/2`)}
-                                            bgcolor='gray'
-                                            component='img'
-                                            borderRadius='5px'
-                                            border='2px solid white'
-                                            sx={{ height: { xs: '100%', sm: '100%' }, width: { xs: '310px', sm: '100%' } }}
-                                            src={card} />
-
-
-                                    </Grid>
-                                    <Grid item xs={4} sm={4} md={4} >
-
-
-                                        <Box
-                                            onClick={() => navigate(`/branch/${params.event}/2`)}
-                                            bgcolor='gray'
-                                            component='img'
-                                            borderRadius='5px'
-                                            border='2px solid white'
-                                            sx={{ height: { xs: '100%', sm: '100%' }, width: { xs: '310px', sm: '100%' } }}
-                                            src={card} />
-
-
-                                    </Grid>
-                                    <Grid item xs={4} sm={4} md={4} >
-
-
-
-                                        <Box
-                                            onClick={() => navigate(`/branch/${params.event}/2`)}
-                                            bgcolor='gray'
-                                            component='img'
-                                            borderRadius='5px'
-                                            border='2px solid white'
-                                            sx={{ height: { xs: '100%', sm: '100%' }, width: { xs: '310px', sm: '100%' } }}
-                                            src={card} />
-
-
-
-                                    </Grid> */}
-
-
                                 </Grid>
 
 
