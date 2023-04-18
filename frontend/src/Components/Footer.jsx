@@ -30,9 +30,9 @@ const Footer = () => {
                     </Typography>
                 </Stack>
             </Stack>
-            <Stack width='100%' direction='row' >
+            <Stack width='100%' direction='row' alignItems='center' justifyContent='center'>
                 <Stack flex={4} alignItems='center' justifyContent='center'>
-                    <Stack mt={1}>
+                    <Stack mt={2}>
 
                         <Typography sx={{
                             fontFamily: 'Kelly Slab',
@@ -68,7 +68,7 @@ const Footer = () => {
                     </Button>
                 </Stack>
                 <Stack flex={4} alignItems='center' justifyContent='center'>
-                    <Stack mt={1} alignItems='center' justifyContent='center'>
+                    <Stack mt={2} alignItems='center' justifyContent='center'>
 
                         <Typography sx={{
                             fontFamily: 'Kelly Slab',
