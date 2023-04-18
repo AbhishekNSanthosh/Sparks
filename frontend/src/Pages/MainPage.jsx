@@ -35,6 +35,27 @@ const MainPage = ({user,authWithGoogle}) => {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
+    const [countdown, setCountdown] = useState('');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      const tomorrow = new Date();
+      tomorrow.setDate(now.getDate() + 1);
+      tomorrow.setHours(9, 0, 0, 0);
+
+      const difference = tomorrow.getTime() - now.getTime();
+
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      setCountdown(`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
     const [backgroundImage, setBackgroundImage] = useState("");
     const backgroundImageUrls = [
@@ -123,12 +144,18 @@ const MainPage = ({user,authWithGoogle}) => {
                 </Stack>
                 <Stack direction='column' p={3} justifyContent='center' alignItems='center' sx={{ marginTop: { xs: '100px', sm: '10px' } }}>
                     <Stack>
-                        <Typography
+                        {/* <Typography
                             sx={{
                                 fontFamily: 'Kelly Slab',
                                 fontSize: { sm: '30px', xs: '20px' },
                                 fontWeight: { xs: '500', sm: '700' }
-                            }}>{days}d : {hours}h : {minutes}m : {seconds}s</Typography>
+                            }}>{days}d : {hours}h : {minutes}m : {seconds}s</Typography> */}
+                             <Typography
+                            sx={{
+                                fontFamily: 'Kelly Slab',
+                                fontSize: { sm: '30px', xs: '20px' },
+                                fontWeight: { xs: '500', sm: '700' }
+                            }}letterSpacing={2}>{countdown} to go!</Typography>
                     </Stack>
                 </Stack>
                 {/* title and date */}
