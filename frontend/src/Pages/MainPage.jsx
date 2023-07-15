@@ -142,14 +142,14 @@ const MainPage = ({user,authWithGoogle}) => {
                         width: { xs: '120', sm: '250px' }
                     }} />
                 </Stack>
-                <Stack direction='column' p={3} justifyContent='center' alignItems='center' sx={{ marginTop: { xs: '100px', sm: '10px' } }}>
+                {/* <Stack direction='column' p={3} justifyContent='center' alignItems='center' sx={{ marginTop: { xs: '100px', sm: '10px' } }}>
                     <Stack>
-                        {/* <Typography
+                     <Typography
                             sx={{
                                 fontFamily: 'Kelly Slab',
                                 fontSize: { sm: '30px', xs: '20px' },
                                 fontWeight: { xs: '500', sm: '700' }
-                            }}>{days}d : {hours}h : {minutes}m : {seconds}s</Typography> */}
+                            }}>{days}d : {hours}h : {minutes}m : {seconds}s</Typography>
                              <Typography
                             sx={{
                                 fontFamily: 'Kelly Slab',
@@ -157,7 +157,7 @@ const MainPage = ({user,authWithGoogle}) => {
                                 fontWeight: { xs: '500', sm: '700' }
                             }}letterSpacing={2}>{countdown} to go!</Typography>
                     </Stack>
-                </Stack>
+                </Stack> */}
                 {/* title and date */}
                 <Stack zIndex='1' display='flex' sx={{ flexDirection: { xs: 'column', sm: 'row' } }}>
 
